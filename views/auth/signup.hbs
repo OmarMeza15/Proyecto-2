@@ -1,24 +1,59 @@
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
-
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
+<div class="container-fluid login-container fondo-login" >
+  <div id="login-form">
+    <div class="d-flex flex-row justify-content-center align-items-center center-title">
+      <div class="center-title">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-globe-americas"></i>
+        </a>
+        <h2>Signup</h2>
+      </div>
+    </div>
+    
+    <form action="/auth/login" method="POST" class="d-flex flex-row">
+      <div class="form-login form-signup">
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lastname">
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Birthday date</label>
+          <input type="date" name="date" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?">
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Country:
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Argentina</a></li>
+            <li><a class="dropdown-item" href="#">Bolivia</a></li>
+            <li><a class="dropdown-item" href="#">Brasil</a></li>
+            <li><a class="dropdown-item" href="#">Canada</a></li>
+            <li><a class="dropdown-item" href="#">Chile</a></li>
+            <li><a class="dropdown-item" href="#">Colombia</a></li>
+            <li><a class="dropdown-item" href="#">Hungria</a></li>
+            <li><a class="dropdown-item" href="#">Mexico</a></li>
+            <li><a class="dropdown-item" href="#">Usa</a></li>            
+          </ul>
+        </div>
+        <div class="btn-login">
+          <button type="submit" class="btn btn-light">Enter</button>
+        </div>
+      </div>
+      <div class="d-flex">
+        <img class="pic-signup" src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8dHJhdmVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="travelling by car"/>
+      </div>
+        
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
+    </form>
+  </div>
 </div>

@@ -141,6 +141,11 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .catch((err) => next(err));
 });
 
+//Get /auth/catalogue
+router.get("/catalogue", (req, res) => {
+  res.render("auth/catalogue")
+});
+
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
