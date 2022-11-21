@@ -119,7 +119,7 @@
         <div class="info-countries">
             <h2 class="main-country">Country name</h2>
             <div class="flag-text-country">
-                <img src="https://media.istockphoto.com/id/577965774/es/foto/banderas-nacionales-de-los-pa%C3%ADses-del-mundo-bandera-brasile%C3%B1a.jpg?s=612x612&w=0&k=20&c=yGVNINUNvv80akcNjXjlcf-4OGEAnIH_PIBB8Xcf2rQ=" alt="country-flag" class="flags">
+                <img src="/images/pic-for-eachCountry.jpeg" alt="country-flag" class="flags">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni, voluptatibus voluptatem libero dolore qui ut perferendis veniam dicta dignissimos?</p>
             </div>
         </div>
@@ -127,20 +127,19 @@
                 <h1 class="title-catalogue">Countries:</h1>
                 <p class="text-cataloque">Which one are you looking for ?</p>
                 <div class="dropdown country-enter1">
-                    <button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Country
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Argentina</a></li>
-                        <li><a class="dropdown-item" href="#">Bolivia</a></li>
-                        <li><a class="dropdown-item" href="#">Brasil</a></li>
-                        <li><a class="dropdown-item" href="#">Canada</a></li>
-                        <li><a class="dropdown-item" href="#">Chile</a></li>
-                        <li><a class="dropdown-item" href="#">Colombia</a></li>
-                        <li><a class="dropdown-item" href="#">Hungria</a></li>
-                        <li><a class="dropdown-item" href="#">Mexico</a></li>
-                        <li><a class="dropdown-item" href="#">Usa</a></li>            
-                    </ul>
+                    <label for="country-select">Country:</label>
+                    <select name="countries" id="country-select" class="date-rect">
+                        <option value="">Please choose a country</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Hungria">Hungria</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Usa">Usa</option>
+                    </select>
                 </div>
                 <div >
                     <button type="submit" class="country-list country-enter2">Enter</button>
