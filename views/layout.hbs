@@ -26,20 +26,33 @@
             </a>
             <ul class="navbar-nav d-flex justify-content-center align-items-center">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Catalogue</a>
+                <a class="nav-link" href="/auth/catalogue">Catalogue</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/about">About</a>
               </li>
             </ul>
             <div class="btn-layout">
-              <form class="d-flex" role="search">
-                <button class="btn btn-outline-success login-layout" type="submit">Login</button>
-                <button class="btn btn-outline-success" type="submit">Signup</button>
-              </form>
+              <div class="d-flex" >
+                {{#unless currentUser}}
+                <a href="/auth/login">
+                  <button class="btn btn-outline-success login-layout">Login</button>
+                </a>
+                <a href="/auth/signup">
+                  <button class="btn btn-outline-success login-layout">Signup</button>
+                </a>
+                {{/unless}}
+                {{#if currentUser}}
+                <h3 class="user-name">{{currentUser.name}} {{currentUser.lastName}}</h3>
+                <a href="/auth/logout">
+                  <button class="btn btn-outline-success login-layout">Logout</button>
+                </a>
+                
+                {{/if}}
+              </div>
             </div>
             
           </div>

@@ -23,15 +23,11 @@ const postSchema = new Schema(
         required: [false],
         trim: true,
     },
-    author: {
-        User: {
-            name: String,
-            lastName: String
-        },
-        type: String,
-        required: [true, "author is required."],
-        trim: true,
-    },
+    author:[
+        {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }],
     image: {
       type: String,
       required: [true, "image is required."],

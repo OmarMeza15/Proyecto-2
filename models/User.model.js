@@ -23,8 +23,9 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: [true, "password is required."],
+      minLength: 6
     },
-    birthday: {
+    dateOfBirth: {
       type: Date,
       required: false,
     },
@@ -36,10 +37,12 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-    post: {
-      type: String,
-      required: true,
-    },
+    posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post"
+    }
+    ]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
