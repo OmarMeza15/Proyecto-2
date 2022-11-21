@@ -145,6 +145,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 router.get("/catalogue", (req, res) => {
   res.render("auth/catalogue")
 });
+//Get /auth/profile
+router.get("/profile", (req, res) => {
+  res.render("auth/profile")
+});
+//Get /auth/eachCountry
+router.get("/eachCountry", (req, res) => {
+  res.render("auth/eachCountry")
+});
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {

@@ -9,7 +9,7 @@
       </div>
     </div>
     
-    <form action="/auth/login" method="POST" class="d-flex flex-row">
+    <form action="/auth/login" method="POST" class="d-flex flex-row signup-font">
       <div class="form-login form-signup">
         <div class="mb-3">
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
@@ -25,10 +25,23 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Birthday date</label>
-          <input type="date" name="date" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?">
+          <input type="date" name="date" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?" class="date-rect">
         </div>
         <div class="dropdown">
-          <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <label for="country-select">Country:</label>
+          <select name="countries" id="country-select" class="date-rect">
+            <option value="">Please choose a country</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Canada">Canada</option>
+            <option value="Chile">Chile</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Hungria">Hungria</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Usa">Usa</option>
+          </select>
+          {{!-- <button class="btn btn-light dropdown-toggle" type="select" data-bs-toggle="dropdown" aria-expanded="false">
             Country:
           </button>
           <ul class="dropdown-menu">
@@ -41,7 +54,7 @@
             <li><a class="dropdown-item" href="#">Hungria</a></li>
             <li><a class="dropdown-item" href="#">Mexico</a></li>
             <li><a class="dropdown-item" href="#">Usa</a></li>            
-          </ul>
+          </ul> --}}
         </div>
         <div class="btn-login">
           <button type="submit" class="btn btn-light">Enter</button>
