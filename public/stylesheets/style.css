@@ -34,6 +34,10 @@ h1 {
   margin-bottom: 50px;
 }
 
+#developersTitle, #repository {
+  margin: 50px auto;
+}
+
 /* barra de navegacion */
 .fondo{
   background-color: #ffff;
