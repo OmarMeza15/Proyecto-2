@@ -1,18 +1,255 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+body{
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  transition: all 2s ease-in-out;
+}
+/* barra de navegacion */
+.fondo{
+  background-color: #D4E09B;
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.navbar{
+  padding: 2rem;
+  background-color: #D4E09B;
+}
+.navbar-collapse{
+  align-items: center;
+  justify-content: space-between;
+}
+i{
+  font-size: 30px;
+}
+.btn-layout{
+  display: flex;
+}
+/* icono responsivo */
+@media screen and (max-width: 767px) {
+  .navbar-brand{
+    display: none;
+  }
+}
+.login-layout{
+  margin-right: 10px;
 }
 
-a {
-  color: #00b7ff;
+/* login */
+.form-login{
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-container{
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pic-login{
+  width: 300px;
+  height: 250px;
+  border-radius: 25% 10%;
+  padding: 20px;
+}
+.fondo-login{
+  background-color: #FEFAE0;
+  width: 100vw;
+  height: 100vh;
+}
+.btn-login{
+  background-color: #FEFAE0;
 }
 
-h1 {
-  color: 15px;
+/* signup */
+.form-signup{
+  display: flex;
+}
+.pic-signup{
+  width: 400px;
+  height: 300px;
+  border-radius: 40%;
+  padding: 20px 20px 20px 40px;
+}
+.center-title{
+  display: flex;
+  padding-bottom: 40px;
+  align-content: stretch;
+}
+.signup-font{
+  font-family: 'Noto Sans', sans-serif;
+  color:#3D405B;
+}
+.date-rect{
+  font-family: 'Noto Sans', sans-serif;
+  border-radius: 5px;
+  height: 5vh;
+  border-color: #888ec0;
+  border-width: thin;
+}
+
+/* catalogue */
+.main-div-catalogue {
+  height: 100vh;
+  padding: 40px 30px;
+  background-color: #FEFAE0;
+  background-size: cover;
+}
+.country-text{
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  margin-top: 100px;
+  background-color: #E9EDC9;
+  border: 1px solid;
+  border-color: #b9f1d6;
+  border-radius: 5px;
+  margin-left: 15px;
+  width: 40vw;
+  margin-left: 50px;
+  margin-right: 50px
+}
+.title-catalogue{
+  color: #A44A3F;
+  font-family: 'Libre Bodoni', serif;
+  padding: 20px;
+  font-size: 40px;
+  margin: 0 20px;
+}
+.row-pics{
+  flex-direction: row;
+  align-content: center;
+  width: 70vw;
+}
+.card-country{
+  margin: 0;
+  padding: 0;
+}
+.text-cataloque{
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 25px;
+  color: #3D405B;
+  margin: 0 20px;
+  padding: 20px;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+.country-list{
+  font-family: 'Noto Sans', sans-serif;
+  color: #3D405B;
+  background-color: #CCD5AE;
+  border-color: grey;
+  border-width: thin;
+  border-radius: 5px;
+  margin: 0 20px;
+  width: 25%;
+  height: 35px;
+}
+button:hover{
+  color: white;
+  background-color: rgb(36, 97, 36);
+}
+.country-enter1{
+  margin-top: 25px;
+}
+.country-enter2{
+  margin-top: 15px;
+}
+/* Profile */
+.user-default{
+  font-size: 250px;
+  color:#81B29A;
+}
+.main-div-profile{
+  width: 100vw;
+  height: 100vh;
+  flex-direction: row;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #FEFAE0;
+  padding: 30px;
+}
+.container-profile{
+  background-color: #E9EDC9;
+  padding-left: 20px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about-profile{
+  font-family: 'Noto Sans', sans-serif;
+  width: 45vw;
+  color: #3D405B;
+  padding-top: 40px;
+}
+.about-profile p{
+  line-height: initial;
+  padding: 10px;
+  padding-right: 60px;
+}
+.div-profile-card{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.list-profile{
+  list-style: none;
+  line-height: initial;
+  padding: 10px;
+}
+/* eachCountry */
+.flags{
+  width: 15vw;
+  height: 20vh;
+  border-radius: 10px;
+  margin: 0 20px 0;
+}
+.flag-text-country{
+  display:flex;
+  align-items: center;
+  padding: 10px 20px 20px;
+}
+.flag-text-country p{
+  width: 25vw;
+  text-align: center;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  color: #3D405B;
+}
+.main-country{
+  margin-top: 20px;
+  text-align: center;
+  color: #A44A3F;
+  font-family: 'Libre Bodoni', serif;
+}
+.info-countries, .country-search{
+  margin:0;
+}
+.info-countries{
+  padding-bottom:15px;
+  height: 50vh;
+}
+.main-div-eachCountry{
+  padding-top: 0px;
+}
+.container-for-country{
+  background-color: #FAEDCD;
+  border-style: none;
+  display: flex;
+  margin-top: 10px;
+  padding-top: 5px;
+  width: 40vw;
+}
+.country-search{
+  background-color: #FAEDCD;
+  border-style: none;
+  margin: 0;
+  width: 30vw;
+  height: 40vh;
+  line-height:0;
+  padding: 0;
 }
 
 #cards {
