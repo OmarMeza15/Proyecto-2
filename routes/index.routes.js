@@ -10,4 +10,12 @@ router.get("/home", (req, res, next) => {
   res.render("home");
 });
 
+router.get("/create", (req, res, next) => {
+  res.render("posts/createPost");
+});
+
+router.get("/post", (req, res, next) => {
+  res.render("posts/post");
+});
+
 module.exports = router;
