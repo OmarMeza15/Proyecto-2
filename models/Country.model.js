@@ -10,7 +10,7 @@ const countrySchema = new Schema(
     },
     info: {
       type: String,
-      required: [false],
+      required: [true, "info is required."],
       trim: true,
     },
     flagImg: {
@@ -18,10 +18,10 @@ const countrySchema = new Schema(
       required: [false],
     }
   },
-  {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
-  }
+//   {
+//     // this second object adds extra properties: `createdAt` and `updatedAt`
+//     timestamps: true,
+//   }
 );
 
 const Country = model("Country", countrySchema);
