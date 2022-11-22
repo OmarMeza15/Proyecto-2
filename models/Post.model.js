@@ -10,8 +10,8 @@ const postSchema = new Schema(
     },
     country: {
       type: String,
-      reqired: [true, "Country is required"],
-      trim: true
+      required: [true, "Country is required."],
+      trim: true,
     },
     date: {
         type: Date,
