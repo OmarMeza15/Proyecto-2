@@ -3,16 +3,9 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const countrySchema = new Schema(
   {
-    countryName: [
-    {
-        type: Schema.Types.ObjectId,
-        ref: "Post"
+    countryName: {
+        type: String,
     },
-    {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    }
-    ],
     info: {
       type: String,
       required: [true, "info is required."],
@@ -20,13 +13,12 @@ const countrySchema = new Schema(
     },
     flagImg: {
       type: String,
-      required: [false],
     }
   },
-//   {
-//     // this second object adds extra properties: `createdAt` and `updatedAt`
-//     timestamps: true,
-//   }
+  {
+     // this second object adds extra properties: `createdAt` and `updatedAt`
+    timestamps: true,
+   }
 );
 
 const Country = model("Country", countrySchema);

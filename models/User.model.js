@@ -27,20 +27,19 @@ const userSchema = new Schema(
     },
     dateOfBirth: {
       type: Date,
-      required: false,
     },
     country: {
       type: String,
-      required: false,
+    },
+    occupation: {
+      type: String
     },
     profilePic: {
       type: String,
-      required: false,
       default: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
     },
     aboutUser: {
       type: String,
-      required: false
     },
     posts: [
     {

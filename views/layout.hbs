@@ -42,27 +42,27 @@
             <div class="btn-layout">
               <div class="d-flex" >
                 {{#unless currentUser}}
-                <a href="/auth/login">
-                  <button class="btn btn-outline-success login-layout">Login</button>
-                </a>
+                  <a href="/auth/login">
+                    <button class="btn btn-outline-success login-layout">Login</button>
+                  </a>
 
-                <a href="/auth/signup">
-                  <button class="btn btn-outline-success login-layout">Signup</button>
-                </a>
+                  <a href="/auth/signup">
+                    <button class="btn btn-outline-success login-layout">Signup</button>
+                  </a>
 
-                <a href="/user/profile">
-                  <button class="btn btn-outline-success login-layout">Profile</button>
-                </a>
                 {{/unless}}
 
                 {{#if currentUser}}
-                {{#with currentUser}}
-                <img src="{{profilePic}}" class="pic-default-navbar"/>
-                <h3 class="user-name">{{name}} {{lastName}}</h3>
-                {{/with}}
-                <a href="/auth/logout">
-                  <button class="btn btn-outline-success login-layout">Logout</button>
-                </a>
+                  {{#with currentUser}}
+                    <img src="{{profilePic}}" class="pic-default-navbar"/>
+                    <h3 class="user-name">{{name}} {{lastName}}</h3>
+                  {{/with}}
+                    <a href="/user/profile">
+                      <button class="btn btn-outline-success login-layout">Profile</button>
+                    </a>
+                    <a href="/auth/logout">
+                      <button class="btn btn-outline-success login-layout">Logout</button>
+                    </a>
                 {{/if}}
                 
               </div>
