@@ -9,25 +9,22 @@ const postSchema = new Schema(
       trim: true,
     },
     country: {
-      type: String,
-      required: [true, "country is required."],
-      trim: true,
+      type: Schema.Types.ObjectId,
+        ref: "Country"
     },
     date: {
         type: Date,
-        required: [false],
         trim: true,
     },
     text: {
         type: String,
-        required: [false],
+        required: [true],
         trim: true,
     },
-    author:[
-        {
+    author: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    }],
+    },
     image: {
       type: String,
       required: [true, "image is required."],
