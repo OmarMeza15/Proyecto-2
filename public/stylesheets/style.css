@@ -5,7 +5,7 @@ body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 2s ease-in-out;
+  /* transition: all 1s ease-out; */
 }
 /* barra de navegacion */
 .fondo{
@@ -31,6 +31,12 @@ i{
   padding-right: 10px;
   font-size: 25px;
   color: #3D405B;
+}
+.pic-default-navbar{
+  
+  padding: 0 10px 0 0;
+  width: 4vw;
+  height: 6vh;
 }
 /* icono responsivo */
 @media screen and (max-width: 767px) {
@@ -86,8 +92,11 @@ i{
   align-content: stretch;
 }
 .signup-font{
+  margin-top: -50px;
+}
+.signup-font > label, input{
   font-family: 'Noto Sans', sans-serif;
-  color:#3D405B;
+  color:#000000;
 }
 .date-rect{
   font-family: 'Noto Sans', sans-serif;
@@ -331,6 +340,10 @@ i{
   background-color: #FEFAE0;
   width: 100vw;
   height: 100vh;
+  padding-top: 20px;
+}
+.fondo-login-padding{
+  padding-top: 100px;
 }
 .btn-login{
   background-color: #FEFAE0;

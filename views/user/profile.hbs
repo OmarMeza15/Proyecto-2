@@ -1,19 +1,26 @@
 <div class=" container-fluid d-flex main-div-profile">
+    
     <div class="container-profile d-flex">
+        {{#if currentUser}}
+        {{#with currentUser}}
         <div class="d-flex pic-profile">
             <i class="bi bi-person-circle user-default"></i>
         </div>
+
         <div class="about-profile">
-            <h3>Name lastname</h3>
+            <h3>{{name}} {{lastName}}</h3>
             <ul class="list-profile">
-                <li>Country</li>
-                <li>Age</li>
-                <li>Occupation</li>
+                <li>{{country}}</li>
+                <li>{{dateOfBirth}}</li>
+                <li>{{occupation}}</li>
             </ul>
             <h5>About me:</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam consequuntur debitis dolore minus at, praesentium ducimus blanditiis fugiat eius ab, numquam reiciendis dolorem pariatur incidunt? Rerum iure itaque recusandae?</p>
+            <p>{{aboutUser}}</p>
         </div>
+        {{/with}}
+        {{/if}}
     </div>
+    
     <div class="div-profile-card">
         <div class="card" style="width: 30rem;">
             <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="users-pics">
