@@ -17,29 +17,55 @@
     <div class="container-fluid fondo">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="container-fluid">
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbar-toggler">
             <a class="navbar-brand" href="/">
               <i class="bi bi-globe-americas"></i>
             </a>
+
             <ul class="navbar-nav d-flex justify-content-center align-items-center">
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/auth/catalogue">Catalogue</a>
+                <a class="nav-link" href="/country/catalogue">Catalogue</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
               </li>
             </ul>
+
             <div class="btn-layout">
-              <form class="d-flex" role="search">
-                <button class="btn btn-outline-success login-layout" type="submit">Login</button>
-                <button class="btn btn-outline-success" type="submit">Signup</button>
-              </form>
+              <div class="d-flex" >
+                {{#unless currentUser}}
+                <a href="/auth/login">
+                  <button class="btn btn-outline-success login-layout">Login</button>
+                </a>
+
+                <a href="/auth/signup">
+                  <button class="btn btn-outline-success login-layout">Signup</button>
+                </a>
+
+                <a href="/user/profile">
+                  <button class="btn btn-outline-success login-layout">Profile</button>
+                </a>
+                {{/unless}}
+
+                {{#if currentUser}}
+                {{#with currentUser}}
+                <img src="{{profilePic}}" class="pic-default-navbar"/>
+                <h3 class="user-name">{{name}} {{lastName}}</h3>
+                {{/with}}
+                <a href="/auth/logout">
+                  <button class="btn btn-outline-success login-layout">Logout</button>
+                </a>
+                {{/if}}
+                
+              </div>
             </div>
             
           </div>

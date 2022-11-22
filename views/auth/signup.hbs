@@ -9,27 +9,27 @@
       </div>
     </div>
     
-    <form action="/auth/login" method="POST" class="d-flex flex-row signup-font">
+    <form action="/auth/signup" method="POST" class="d-flex flex-row signup-font">
       <div class="form-login form-signup">
         <div class="mb-3">
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+          <input type="text" class="form-control" placeholder="Name" name="name" value="pepito">
         </div>
         <div class="mb-3">
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Lastname">
+          <input type="text" class="form-control" placeholder="Lastname" name="lastName" value="perez">
         </div>
         <div class="mb-3">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email address">
+          <input type="email" class="form-control" placeholder="Email address" name="email" value="pepitoperez@perez.com">
         </div>
         <div class="mb-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <input type="password" class="form-control"  placeholder="Password" name="password" value="peRez12345">
         </div>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Birthday date</label>
-          <input type="date" name="date" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?" class="date-rect">
+          <label for="exampleInputEmail1" class="form-label">Date of birth</label>
+          <input type="date" name="dateOfBirth" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?" class="date-rect">
         </div>
         <div class="dropdown">
           <label for="country-select">Country:</label>
-          <select name="countries" id="country-select" class="date-rect">
+          <select name="country" id="country-select" class="date-rect">
             <option value="">Please choose a country</option>
             <option value="Argentina">Argentina</option>
             <option value="Bolivia">Bolivia</option>
@@ -56,6 +56,17 @@
             <li><a class="dropdown-item" href="#">Usa</a></li>            
           </ul> --}}
         </div>
+
+        <div class="mb-3">
+          <label  class="form-label">About you:</label>
+          <input type="text" class="form-control" name="aboutUser" value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam consequuntur debitis">
+        </div>
+
+        <div class="mb-3">
+          <label  class="form-label">Occupation:</label>
+          <input type="text" class="form-control" name="occupation" value="student">
+        </div>
+
         <div class="btn-login">
           <button type="submit" class="btn btn-light">Enter</button>
         </div>

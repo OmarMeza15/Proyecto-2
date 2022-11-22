@@ -21,16 +21,15 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 // POST /auth/signup
-router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body;
-
+router.post("/signup", isLoggedOut, (req, res, next) => {
+  const { name, lastName, email, dateOfBirth, country, password } = req.body;
+  // console.log(req.body)
   // Check that username, email, and password are provided
-  if (username === "" || email === "" || password === "") {
+  if (name === "" || email === "" || password === "" || lastName === "" ) {
     res.status(400).render("auth/signup", {
       errorMessage:
         "All fields are mandatory. Please provide your username, email and password.",
     });
-
     return;
   }
 
@@ -38,7 +37,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
     res.status(400).render("auth/signup", {
       errorMessage: "Your password needs to be at least 6 characters long.",
     });
-
     return;
   }
 
@@ -61,7 +59,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a user and save it in the database
-      return User.create({ username, email, password: hashedPassword });
+      return User.create({ name, lastName, email, dateOfBirth, country, password: hashedPassword });
     })
     .then((user) => {
       res.redirect("/auth/login");
@@ -87,10 +85,10 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
 
   // Check that username, email, and password are provided
-  if (username === "" || email === "" || password === "") {
+  if ( email === "" || password === "") {
     res.status(400).render("auth/login", {
       errorMessage:
         "All fields are mandatory. Please provide username, email and password.",
@@ -134,26 +132,26 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          res.redirect("/user/profile");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
     .catch((err) => next(err));
 });
-
+//-------------------------estan comentadas porque ya hay rutas distintas para usuario y pais-----------------------
 //Get /auth/catalogue
-router.get("/catalogue", (req, res) => {
-  res.render("auth/catalogue")
-});
+// router.get("/catalogue", (req, res) => {
+//   res.render("auth/catalogue")
+// });
 //Get /auth/profile
-router.get("/profile", (req, res) => {
-  res.render("auth/profile")
-});
+// router.get("/profile", (req, res) => {
+//   res.render("auth/profile")
+// });
 //Get /auth/eachCountry
-router.get("/eachCountry", (req, res) => {
-  res.render("auth/eachCountry")
-});
-
+// router.get("/eachCountry", (req, res) => {
+//   res.render("auth/eachCountry")
+// });
+//--------------------------------------------------------------------------------------------------------------------
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {

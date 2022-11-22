@@ -23,8 +23,9 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: [true, "password is required."],
+      minLength: 6
     },
-    birthday: {
+    dateOfBirth: {
       type: Date,
       required: false,
     },
@@ -35,11 +36,18 @@ const userSchema = new Schema(
     profilePic: {
       type: String,
       required: false,
+      default: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
     },
-    post: {
+    aboutUser: {
       type: String,
-      required: true,
+      required: false
     },
+    posts: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Post"
+    }
+    ]
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
