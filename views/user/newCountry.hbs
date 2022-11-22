@@ -1,0 +1,47 @@
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css" />
+</head>
+
+<body>
+
+    {{!-- Form--}}
+    <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                <form action="/profile/newCountry" method="post">
+                    <h2>New Country</h2>
+                    
+                    {{!-- Inputs --}}
+                    <fieldset class="uk-fieldset">
+
+                        {{!-- Input for the title of the story --}}
+                        <legend class="uk-legend">Name</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Colombia" name="countryName">
+                        </div>
+                        
+                        {{!-- Input for the country --}}
+                        <legend class="uk-legend">Fun fact</legend>
+                        <div class="uk-margin">
+                            <input class="uk-textarea" rows="6" type="text" placeholder="Did you know that...?" name="info">
+                        </div>
+
+                        {{!-- Input for a phot link --}}
+                        <legend class="uk-legend">Add a Photo of the flag</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="https://image.com/..." name="flagImg">
+                        </div>
+
+                        {{!-- Button to post --}}
+                        <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                            <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button>
+                        </div>
+                    </fieldset>
+                </form> 
+            </div>
+    </div>    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>    
+</body>

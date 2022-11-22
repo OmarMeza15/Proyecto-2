@@ -9,8 +9,9 @@ const postSchema = new Schema(
       trim: true,
     },
     country: {
-      type: Schema.Types.ObjectId,
-        ref: "Country"
+      type: String,
+      required: [true, "Country is required."],
+      trim: true,
     },
     date: {
         type: Date,
