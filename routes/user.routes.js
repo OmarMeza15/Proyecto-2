@@ -11,11 +11,11 @@ router.get("/newCountry", (req, res, next) => {
     res.render("user/newCountry", { currentUser: req.session.currentUser });
 });
 
-router.post("/profile/newCountry", (req, res, next) => {
+router.post("/newCountry", (req, res, next) => {
     const { countryName, info, flagImg } = req.body;
 
     Country.create({ countryName, info, flagImg })
-    .then(() => res.redirect("user/profile", { currentUser: req.session.currentUser }))
+    .then(() => console.log("success") )
     .catch((err) => console.log(err));
 })
 
