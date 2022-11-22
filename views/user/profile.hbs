@@ -2,22 +2,22 @@
     
     <div class="container-profile d-flex">
         {{#if currentUser}}
-        {{#with currentUser}}
-        <div class="d-flex pic-profile">
-            <i class="bi bi-person-circle user-default"></i>
-        </div>
+            {{#with currentUser}}
+                <div class="d-flex pic-profile">
+                    <i class="bi bi-person-circle user-default"></i>
+                </div>
 
-        <div class="about-profile">
-            <h3>{{name}} {{lastName}}</h3>
-            <ul class="list-profile">
-                <li>{{country}}</li>
-                <li>{{dateOfBirth}}</li>
-                <li>{{occupation}}</li>
-            </ul>
-            <h5>About me:</h5>
-            <p>{{aboutUser}}</p>
-        </div>
-        {{/with}}
+                <div class="about-profile">
+                    <h3>{{name}} {{lastName}}</h3>
+                    <ul class="list-profile">
+                        <li>{{country}}</li>
+                        <li>{{dateOfBirth}}</li>
+                        <li>{{occupation}}</li>
+                    </ul>
+                    <h5>About me:</h5>
+                    <p>{{aboutUser}}</p>
+                </div>
+            {{/with}}
         {{/if}}
     </div>
     

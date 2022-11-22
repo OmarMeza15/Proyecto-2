@@ -9,9 +9,10 @@ router.get("/create", (req, res, next) => {
 
 router.post("/create", (req, res, next) => {
     const { title, country, date, text, image } = req.body;
+    console.log("this is the body", req.body)
     
     Post.create({ title, country, date, text, image })
-    .then((Post) => res.redirect("posts/post", Post))
+    .then(() => res.redirect("post"))
     .catch((err) => console.log(err))
 });
 

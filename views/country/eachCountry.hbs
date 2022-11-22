@@ -125,18 +125,18 @@
 
     <div class="container-for-country country-text">
         <div class="info-countries">
-            <h2 class="main-country">Country name</h2>
+            <h2 class="main-country" name="countryName">{{countryName}}</h2>
             <div class="flag-text-country">
-                <img src="/images/pic-for-eachCountry.jpeg" alt="country-flag" class="flags">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus magni, voluptatibus voluptatem libero dolore qui ut perferendis veniam dicta dignissimos?</p>
+                <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
+                <p name="info">{{info}}</p>
             </div>
         </div>
 
         <div class="country-text country-search">
 
-                <h1 class="title-catalogue">Countries:</h1>
+                {{!-- <h1 class="title-catalogue">Countries:</h1>
 
-                <p class="text-cataloque">Which one are you looking for ?</p>
+                <p class="text-cataloque">Which one are you looking for ?</p> --}}
 
                 <div class="dropdown country-enter1">
                     <label for="country-select">Country:</label>
