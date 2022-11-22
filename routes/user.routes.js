@@ -6,17 +6,18 @@ const router = require("express").Router();
 router.get("/profile", (req, res) => {
     res.render("user/profile", { currentUser: req.session.currentUser });
 });
-
+//GET ppara ingresa a /user/newCountry
 router.get("/newCountry", (req, res, next) => {
     res.render("user/newCountry", { currentUser: req.session.currentUser });
 });
 
-router.post("/profile/newCountry", (req, res, next) => {
+router.post("/newCountry", (req, res, next) => {
     const { countryName, info, flagImg } = req.body;
 
     Country.create({ countryName, info, flagImg })
-    .then(() => res.redirect("user/profile", { currentUser: req.session.currentUser }))
+    .then(() => console.log("succes"))
     .catch((err) => console.log(err));
+
 })
 
 module.exports = router;
