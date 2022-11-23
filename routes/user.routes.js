@@ -14,8 +14,8 @@ router.get("/newCountry", (req, res, next) => {
 router.post("/newCountry", (req, res, next) => {
     const { countryName, info, flagImg } = req.body;
 
-    Country.create({ countryName, info, flagImg })
-    .then(() => console.log("succes"))
+   return Country.create({ countryName, info, flagImg })
+    .then(() => res.render("user/newCountry", { currentUser: req.session.currentUser }))
     .catch((err) => console.log(err));
 
 })

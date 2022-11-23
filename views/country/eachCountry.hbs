@@ -124,13 +124,14 @@
     </div>
 
     <div class="container-for-country country-text">
-        <div class="info-countries">
-            
-            <h2 class="main-country" name="countryName">{{countryName}}</h2>
-            <div class="flag-text-country">
-                <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
-                <p name="info">{{info}}</p>
-            </div>
+        <div class="info-countries" id="info-countries">
+            {{#with data}}
+                <h2 class="main-country" name="countryName">{{countryName}}</h2>
+                <div class="flag-text-country">
+                    <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
+                    <p name="info">{{info}}</p>
+                </div>
+            {{/with}}
             
         </div>
 
@@ -140,9 +141,9 @@
 
                 <p class="text-cataloque">Which one are you looking for ?</p> --}}
 
-                <div class="dropdown country-enter1">
+                <form class="dropdown country-enter1" action="/country/eachCountry">
                     <label for="country-select">Country:</label>
-                    <select name="countries" id="country-select" class="date-rect">
+                    <select name="country" id="country-select" class="date-rect">
                         <option value="">Please choose a country</option>
                         <option value="Argentina">Argentina</option>
                         <option value="Bolivia">Bolivia</option>
@@ -154,11 +155,12 @@
                         <option value="Mexico">Mexico</option>
                         <option value="Usa">Usa</option>
                     </select>
-                </div>
+                    <div >
+                        <button type="submit" class="country-list country-enter2">Enter</button>
+                    </div>
+                </form>
                 
-                <div >
-                    <button type="submit" class="country-list country-enter2">Enter</button>
-                </div>
+                
         </div>
     </div>
     
