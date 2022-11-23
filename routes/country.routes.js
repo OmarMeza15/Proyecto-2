@@ -1,9 +1,12 @@
 const router = require("express").Router();
 const Country = require('../models/Country.model');
+const Post = require("../models/Post.model");
 
 //GET para ingresa /country/catalogue
 router.get("/catalogue", (req, res) => {
-    res.render("country/catalogue", { currentUser: req.session.currentUser })
+    Post.find()
+    .then((PostDB) => res.render("country/catalogue", { currentUser: req.session.currentUser, post: PostDB }))
+    .catch((err) => console.log(err));
 });
 
 //GET para ingresa /country/eachCountry

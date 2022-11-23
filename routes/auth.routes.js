@@ -11,7 +11,7 @@ const saltRounds = 10;
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 
-// Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
+// Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
@@ -23,7 +23,6 @@ router.get("/signup", isLoggedOut, (req, res) => {
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res, next) => {
   const { name, lastName, email, dateOfBirth, country, password, aboutUser, occupation } = req.body;
-  // console.log(req.body)
   // Check that username, email, and password are provided
   if (name === "" || email === "" || password === "" || lastName === "" ) {
     res.status(400).render("auth/signup", {
