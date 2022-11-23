@@ -1,90 +1,73 @@
-<div class="container-fluid d-flex col main-div-catalogue main-div-eachCountry">
+<div class="uk-container">
+    <div class="uk-child-width-expand@s" uk-grid>
 
-    <div class="row row-cols-md-3 row-sm-6 g-3 row-pics1"> 
-          {{!-- row-cols-1  lo saque de las clases de este div --}}
-        <div class="card card-country">
-            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Title</h5>
-                
-                {{!-- <a href="#" class="btn btn-outline-primary stretched-link ">Go somewhere</a> --}}
-                <a href="/post">
-                    <button class="btn btn-outline-success login-layout">Go somewhere</button>
-                </a>
-            </div>
+
+        <div class="uk-position-static uk-visible-toggle uk-light to-move-center" tabindex="-1" uk-slideshow="ratio: 7:3; animation: push" uk-slideshow>
+
+            <ul class="uk-slideshow-items">
+                        {{!-- {{#each post}} --}}
+
+                <li>
+                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
+                </li>
+                <li>
+                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
+                </li>
+
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
         </div>
-
-        <div class="card card-country">
-            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Title</h5>
-                <a href="/post">
-                    <button class="btn btn-outline-success login-layout">Go somewhere</button>
-                </a>
-            </div>
-        </div>
-
-        <div class="card card-country">
-            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Title</h5>
-                <a href="/post">
-                    <button class="btn btn-outline-success login-layout">Go somewhere</button>
-                </a>
-            </div>
-        </div>
-
-        <div class="card card-country">
-            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Title</h5>
-                <a href="/post">
-                    <button class="btn btn-outline-success login-layout">Go somewhere</button>
-                </a>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="container-for-country country-text">
-        <div class="info-countries" id="info-countries">
-            {{#with data}}
-                <h2 class="main-country" name="countryName">{{countryName}}</h2>
-                <div class="flag-text-country">
-                    <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
-                    <p name="info">{{info}}</p>
-                </div>
-            {{/with}}
             
-        </div>
 
-        <div class="country-text country-search">
+        
+        <div class="uk-card content-next-pic">
 
-                {{!-- <h1 class="title-catalogue">Countries:</h1>
+            <div class="uk-card-body content2-eachCountry" id="info-countries">
 
-                <p class="text-cataloque">Which one are you looking for ?</p> --}}
+                {{#with data}}
+                    <h2 class="main-country" name="countryName">{{countryName}}</h2>
+                    <div class="flag-text-country">
+                        <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
+                        <p name="info">{{info}}</p>
+                    </div>
+                {{/with}}
+
+                <h1 class="main-country">Countries:</h1>
+
+                <p class="flag-text-country">Which one are you looking for ?</p>
 
                 <form class="dropdown country-enter1" action="/country/eachCountry">
                     <label for="country-select">Country:</label>
                     <select name="country" id="country-select" class="date-rect">
-                        <option value="">Please choose a country</option>
-                        <option value="Argentina">Argentina</option>
-                        <option value="Bolivia">Bolivia</option>
-                        <option value="Brasil">Brasil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Chile">Chile</option>
-                        <option value="Colombia">Colombia</option>
-                        <option value="Hungria">Hungria</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Usa">Usa</option>
+                            <option value="">Please choose a country</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Bolivia">Bolivia</option>
+                            <option value="Brasil">Brasil</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Hungria">Hungria</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Usa">Usa</option>
                     </select>
-                    <div >
-                        <button type="submit" class="country-list country-enter2">Enter</button>
-                    </div>
+                        <div >
+                            <button type="submit" class="country-list country-enter2">Enter</button>
+                        </div>
                 </form>
-                
-                
+                    
+            </div>
+
+            {{!-- <div class=" uk-card-body content2-eachCountry">     
+            </div> --}}
         </div>
+        
+        
+        
     </div>
-    
 </div>

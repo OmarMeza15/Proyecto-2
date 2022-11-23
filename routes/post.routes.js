@@ -8,10 +8,10 @@ router.get("/create", (req, res, next) => {
 
 
 router.post("/create", (req, res, next) => {
-    const { title, country, date, text, image } = req.body;
+    const { title, country, date, text, image, author } = req.body;
     console.log("this is the body", req.body)
     
-    Post.create({ title, country, date, text, image })
+    Post.create({ title, country, date, text, image, author })
     .then(() => res.redirect("post"))
     .catch((err) => console.log(err))
 });
