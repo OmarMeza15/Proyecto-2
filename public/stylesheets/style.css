@@ -117,10 +117,9 @@ i{
   display: flex;
   flex-direction: column;
   height: 50vh;
-  margin-top: 100px;
-  background-color: #E9EDC9;
+  background-color: white;
   border: 1px solid;
-  border-color: #b9f1d6;
+  border-color: white;
   border-radius: 5px;
   margin-left: 15px;
   width: 40vw;
