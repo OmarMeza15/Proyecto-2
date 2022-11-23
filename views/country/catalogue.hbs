@@ -1,158 +1,66 @@
-<div class="container-fluid d-flex col main-div-catalogue">
+<div class="uk-child-width-expand@s uk-flex uk-flex-middle" uk-grid>
 
+    {{!-- Slideshow of posts --}}
+    <div class="uk-card">
+        <div class="uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push">
 
-    <div class="row row-cols-md-3 row-sm-6 g-3 row-pics">{{!-- row-cols-1  lo saque de las clases de este div --}}
-
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    <ul class="uk-slideshow-items">
+                        {{#each post}}
+                        <li>    
+                            <img src="{{ image }}" alt="">
+                            <div class="uk-position-bottom uk-position-medium uk-text-center uk-light">
+                                <h3 class="uk-margin-remove">{{ title }}</h3>
+                                <p>{{ country }}</p>
+                                <a class="uk-button uk-button-text" href="/post">Read more</a>
                             </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
+                        </li>
+                        {{/each}}
+                    </ul>
 
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                            </div>
-                        </div>
+                    <div class="uk-light">
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
                     </div>
-                
-            </div>
-        </div>
 
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
-        </div>
-        
-        <div class="col card-country">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="...">
-                
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Card title
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                            </div>
-                        </div>
-                    </div>
-                
-            </div>
         </div>
     </div>
 
+    {{!-- Search form --}}
+    <div class="uk-card">
+        <div class="country-text">
 
-    <div class="country-text">
+                    <h1 class="title-catalogue">Countries:</h1>
 
-        <h1 class="title-catalogue">Countries:</h1>
+                    <p class="text-cataloque">Which one are you looking for ?</p>
 
-        <p class="text-cataloque">Which one are you looking for ?</p>
+                    <div class="dropdown country-enter1">
 
-        <div class="dropdown country-enter1">
+                    <button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <strong>Country</strong>
+                    </button>
 
-          <button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <strong>Country</strong>
-          </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Argentina</a></li>
+                        <li><a class="dropdown-item" href="#">Bolivia</a></li>
+                        <li><a class="dropdown-item" href="#">Brasil</a></li>
+                        <li><a class="dropdown-item" href="#">Canada</a></li>
+                        <li><a class="dropdown-item" href="#">Chile</a></li>
+                        <li><a class="dropdown-item" href="#">Colombia</a></li>
+                        <li><a class="dropdown-item" href="#">Hungria</a></li>
+                        <li><a class="dropdown-item" href="#">Mexico</a></li>
+                        <li><a class="dropdown-item" href="#">Usa</a></li>            
+                    </ul>
 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Argentina</a></li>
-            <li><a class="dropdown-item" href="#">Bolivia</a></li>
-            <li><a class="dropdown-item" href="#">Brasil</a></li>
-            <li><a class="dropdown-item" href="#">Canada</a></li>
-            <li><a class="dropdown-item" href="#">Chile</a></li>
-            <li><a class="dropdown-item" href="#">Colombia</a></li>
-            <li><a class="dropdown-item" href="#">Hungria</a></li>
-            <li><a class="dropdown-item" href="#">Mexico</a></li>
-            <li><a class="dropdown-item" href="#">Usa</a></li>            
-          </ul>
+                    </div>
 
-        </div>
-
-        <div >
-          <button type="submit" class="country-list country-enter2">Search</button>
+                    <div >
+                    <button type="submit" class="country-list country-enter2">Search</button>
+                    </div>
         </div>
     </div>
+
 </div>
+
+
+
+
