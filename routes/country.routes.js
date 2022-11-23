@@ -6,10 +6,11 @@ const Post = require("../models/Post.model");
 router.get("/catalogue", async (req, res) => {
     try {
         const { country = "" } = req.query;
+        // const { country, title, image } = req.body;
         const data = await Country.findOne({countryName: country.toLowerCase()})
         const postDB = await Post.find()
         res.render("country/catalogue", { currentUser: req.session.currentUser, post: postDB })
-        res.render("country/eachCountry", { currentUser: req.session.currentUser, data }) 
+        res.render("country/eachCountry", { currentUser: req.session.currentUser, data, post: postDB }) 
     }
     catch (err) {
         console.log(err)
@@ -24,13 +25,27 @@ router.get("/eachCountry", async (req, res) => {
         console.log(req.query)
         const data = await Country.findOne({countryName: country.toLowerCase()})
         console.log(data)
-        res.render("country/eachCountry", { currentUser: req.session.currentUser, data })
+        const posts = await Post.find({country: country.toLowerCase()})
+        console.log(posts)
+        res.render("country/eachCountry", { currentUser: req.session.currentUser, data, posts })
     }
     catch (err) {
         console.log(err)
     }
 });
 
-// router.post("eachCountry",)
+// router.post("/eachCountry", async (req, res) =>{
+//     try{
+//         const { country } = req.query;
+//         console.log("---------------->" , req.query)
+//         const dataPost = await Post.findOne({country: country.toLowerCase()})
+//         console.log(dataPost)
+//         res.redirect("country/eachCountry", { currentUser: req.session.currentUser, dataPost })
+//     }
+//     catch (err) {
+//         console.log(err)
+//     }
+// }); 
+// // router.post("eachCountry",)
 
 module.exports = router;
