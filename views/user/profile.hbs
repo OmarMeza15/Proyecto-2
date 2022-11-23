@@ -1,34 +1,115 @@
-<div class=" container-fluid d-flex main-div-profile">
-    
-    <div class="container-profile d-flex">
-        {{#if currentUser}}
-        {{#with currentUser}}
-        <div class="d-flex pic-profile">
-            <i class="bi bi-person-circle user-default"></i>
-        </div>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/css/uikit.min.css" />
+</head>
 
-        <div class="about-profile">
-            <h3>{{name}} {{lastName}}</h3>
-            <ul class="list-profile">
-                <li>{{country}}</li>
-                <li>{{dateOfBirth}}</li>
-                <li>{{occupation}}</li>
-            </ul>
-            <h5>About me:</h5>
-            <p>{{aboutUser}}</p>
-        </div>
-        {{/with}}
-        {{/if}}
-    </div>
+<body>
     
-    <div class="div-profile-card">
-        <div class="card" style="width: 30rem;">
-            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="users-pics">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    {{!-- <div class=" container-fluid d-flex main-div-profile">
+        
+        <div class="container-profile d-flex">
+            {{#if currentUser}}
+            {{#with currentUser}}
+            <div class="d-flex pic-profile">
+                <i class="bi bi-person-circle user-default"></i>
+            </div>
+
+            <div class="about-profile">
+                <h3>{{name}} {{lastName}}</h3>
+                <ul class="list-profile">
+                    <li>{{country}}</li>
+                    <li>{{dateOfBirth}}</li>
+                    <li>{{occupation}}</li>
+                </ul>
+                <h5>About me:</h5>
+                <p>{{aboutUser}}</p>
+            </div>
+            {{/with}}
+            {{/if}}
+        </div>
+        
+        {{#each post}}
+        <div class="div-profile-card">
+            <div class="card" style="width: 30rem;">
+                <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="users-pics">
+                <div class="card-body">
+                    <p class="card-text">{{ title }}</p>
+                    <p class="card-text">{{ country }}</p>
+                    <p class="card-text">{{ date }}</p>
+                    <p class="card-text">{{ text }}</p>
+                    <img src="{{ image }}" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    
-</div>
+        {{/each}} 
 
+    </div> --}}
+
+    <div id="js-oversized" class="uk-child-width-1-2" uk-grid>
+
+        {{!-- Profile info --}}
+        <div>
+
+            <div class="uk-card uk-card-default uk-card-body uk-position-z-index uk-flex uk-flex-column uk-flex-middle" uk-sticky="end: #js-oversized; offset: 80">
+            
+                {{#if currentUser}}
+                    {{#with currentUser}}
+
+                        <div class="uk-card-media-top">
+                            <img src="{{ profilePic }}" width="150" height="150" class="uk-border-circle" alt="">
+                        </div>
+                        <div class="uk-card-body">
+                            <h3 class="uk-text-capitalize">{{ name }}  {{ lastName }}</h3>
+                            <h5>Country: {{ country }}</h5>
+                            <h6>Birthday: {{ dateOfBirth }}</h6>
+                            <h6>Occupation: {{ occupation }}</h6>
+                            <h3>About me:</h3>
+                            <p>{{ aboutUser }}</p>
+                        </div>
+
+                    {{/with}}
+                {{/if}}
+                
+            </div>
+
+        </div>
+
+        {{!-- Posts --}}
+        <div>
+
+            <div class="uk-padding">
+
+                {{#if currentUser}}
+                    
+                        {{#each post}}
+                            <div class="uk-card uk-card-hover uk-grid-medium">
+                                <div class="uk-card-media-top">
+                                    <img src="{{ image }}" width="1800" height="1200" alt="">
+                                </div>
+                                <div class="uk-card-header">
+                                    <h3 class="uk-card-title uk-text-capitalize">{{ title }}</h3>
+                                    <p>{{ country }}</p>
+                                    <p class="uk-text-muted uk-text-small">{{ date }}</p>
+                                </div>
+
+                                <p class="uk-text-muted uk-text-truncate">{{ text }}</p>
+
+                                <div class="uk-card-footer">
+                                    <a class="uk-button uk-button-text" href="/post">Read more</a>
+                                </div>
+                            </div>
+                        {{/each}}
+                   
+                {{/if}}
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.13/dist/js/uikit-icons.min.js"></script>
+</body>
