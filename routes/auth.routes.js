@@ -22,7 +22,8 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res, next) => {
-  const { name, lastName, email, dateOfBirth, country, password, aboutUser, occupation } = req.body;
+  const { name, lastName, email, dateOfBirth, country, password, aboutUser, occupation, posts } = req.body;
+  // console.log(req.body)
   // Check that username, email, and password are provided
   if (name === "" || email === "" || password === "" || lastName === "" ) {
     res.status(400).render("auth/signup", {
@@ -58,7 +59,7 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a user and save it in the database
-      return User.create({ name, lastName, email, dateOfBirth, country, password: hashedPassword, aboutUser, occupation });
+      return User.create({ name, lastName, email, dateOfBirth, country, password: hashedPassword, aboutUser, occupation, posts });
     })
     .then((user) => {
       res.redirect("/auth/login");

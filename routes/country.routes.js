@@ -3,10 +3,16 @@ const Country = require('../models/Country.model');
 const Post = require("../models/Post.model");
 
 //GET para ingresa /country/catalogue
-router.get("/catalogue", (req, res) => {
-    Post.find()
-    .then((PostDB) => res.render("country/catalogue", { currentUser: req.session.currentUser, post: PostDB }))
-    .catch((err) => console.log(err));
+router.get("/catalogue", async (req, res) => {
+    try {
+        const { country = "" } = req.query;
+        const data = await Country.findOne({countryName: country.toLowerCase()})
+        res.render("country/eachCountry", { currentUser: req.session.currentUser, data }) 
+    }
+    catch (err) {
+        console.log(err)
+    }
+    
 });
 
 //GET para ingresa /country/eachCountry
