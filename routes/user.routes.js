@@ -10,7 +10,7 @@ router.get("/profile", (req, res) => {
         .then((PostDB) => res.render("user/profile", { currentUser: req.session.currentUser, post: PostDB }))
         .catch((err) => console.log(err));
 });
-
+//GET ppara ingresa a /user/newCountry
 router.get("/newCountry", (req, res, next) => {
     res.render("user/newCountry", { currentUser: req.session.currentUser });
 });
@@ -18,9 +18,10 @@ router.get("/newCountry", (req, res, next) => {
 router.post("/newCountry", (req, res, next) => {
     const { countryName, info, flagImg } = req.body;
 
-    Country.create({ countryName, info, flagImg })
+   return Country.create({ countryName, info, flagImg })
     .then(() => res.render("user/newCountry", { currentUser: req.session.currentUser }))
     .catch((err) => console.log(err));
+
 })
 
 

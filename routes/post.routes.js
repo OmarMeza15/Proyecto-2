@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Post = require("../models/Post.model");
 
-// Route for rendering the view to create a post
 router.get("/create", (req, res, next) => {
     res.render("posts/createPost");
 });
