@@ -230,6 +230,13 @@ button:hover{
 .to-move-center{
   padding-top: 90px;
 }
+.shadow-pic{
+  height: 110px;
+  
+}
+.slide-pics{
+  height: 450px;
+}
 .flags{
   width: 15vw;
   height: 20vh;
@@ -267,8 +274,6 @@ button:hover{
   background-color: #FAEDCD;
   border-style: none;
   display: flex;
-  /* margin-top: 10px;
-  width: 40vw; */
 }
 .country-search{
   background-color: #FAEDCD;

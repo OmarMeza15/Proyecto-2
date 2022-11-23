@@ -2,20 +2,22 @@
     <div class="uk-child-width-expand@s" uk-grid>
 
 
-        <div class="uk-position-static uk-visible-toggle uk-light to-move-center" tabindex="-1" uk-slideshow="ratio: 7:3; animation: push" uk-slideshow>
+        <div class="uk-position-relative uk-visible-toggle uk-light to-move-center" tabindex="-1" uk-slideshow="ratio: 7:6; animation: push" uk-slideshow>
 
             <ul class="uk-slideshow-items">
                         {{!-- {{#each post}} --}}
-
-                <li>
-                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
-                </li>
-                <li>
-                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
-                </li>
-                <li>
-                    <img src="/images/pic-for-signup.jpeg" alt="" uk-cover>
-                </li>
+                
+                    {{#each posts}}
+                        <li>
+                            <img src="{{ image }}" alt="" uk-cover>
+                            <div class="uk-overlay uk-overlay-primary uk-position-bottom uk-text-center shadow-pic">
+                                <h3 class="uk-margin-remove">{{ country }}</h3>
+                                <p class="uk-margin-remove">{{ text }}</p>
+                                <a class="uk-button uk-button-text" href="/post">Read more</a>
+                            </div>
+                        </li>
+                    {{/each}}
+                
 
             </ul>
 
@@ -43,7 +45,9 @@
                 <p class="flag-text-country">Which one are you looking for ?</p>
 
                 <form class="dropdown country-enter1" action="/country/eachCountry">
+
                     <label for="country-select">Country:</label>
+
                     <select name="country" id="country-select" class="date-rect">
                             <option value="">Please choose a country</option>
                             <option value="Argentina">Argentina</option>
@@ -56,9 +60,10 @@
                             <option value="Mexico">Mexico</option>
                             <option value="Usa">Usa</option>
                     </select>
-                        <div >
-                            <button type="submit" class="country-list country-enter2">Enter</button>
-                        </div>
+
+                    <div >
+                         <button type="submit" class="country-list country-enter2">Enter</button>
+                    </div>
                 </form>
                     
             </div>

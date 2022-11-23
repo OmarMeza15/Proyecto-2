@@ -3,50 +3,50 @@
 
     {{!-- Form--}}
     <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-                <form action="/create" method="post">
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <form action="/create" method="post">
                     <h2>Tell us about your story!</h2>
                     
-                    {{!-- Inputs --}}
-                    <fieldset class="uk-fieldset">
+                {{!-- Inputs --}}
+                <fieldset class="uk-fieldset">
 
-                        {{!-- Input for the title of the story --}}
-                        <legend class="uk-legend">Title</legend>
-                        <div class="uk-margin">
-                            <input class="uk-input" type="text" placeholder="The most beautiful beach!" name="title">
-                        </div>
+                    {{!-- Input for the title of the story --}}
+                    <legend class="uk-legend">Title</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="The most beautiful beach!" name="title">
+                    </div>
                         
-                        {{!-- Input for the country --}}
-                        <legend class="uk-legend">Where was it?</legend>
-                        <div class="uk-margin">
-                            <input class="uk-input" type="text" placeholder="Mexico" name="country">
-                        </div>
+                    {{!-- Input for the country --}}
+                    <legend class="uk-legend">Where was it?</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Mexico" name="country">
+                    </div>
                         
-                        {{!-- input for the date --}}
-                        <legend class="uk-legend">When was it?</legend>
-                        <div class="uk-margin">
-                            <input class="uk-input" type="date" name="date">
-                        </div>
+                    {{!-- input for the date --}}
+                    <legend class="uk-legend">When was it?</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="date" name="date">
+                    </div>
 
-                        {{!-- Input for the story --}}
-                        <legend class="uk-legend">What's your story?</legend>
-                        <div class="uk-margin">
-                            <textarea class="uk-textarea" rows="6" placeholder="Lorem, ipsum dolor sit..." name="text"></textarea>
-                        </div>
+                    {{!-- Input for the story --}}
+                    <legend class="uk-legend">What's your story?</legend>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="6" placeholder="Lorem, ipsum dolor sit..." name="text"></textarea>
+                    </div>
 
-                        {{!-- Input for a phot link --}}
-                        <legend class="uk-legend">Add a Photo!</legend>
-                        <div class="uk-margin">
-                            <input class="uk-input" type="text" placeholder="Paste the link of you image here" name="image">
-                        </div>
+                    {{!-- Input for a phot link --}}
+                    <legend class="uk-legend">Add a Photo!</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Paste the link of you image here" name="image">
+                    </div>
 
-                        {{!-- Button to post --}}
-                        <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
-                            <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button>
-                        </div>
-                    </fieldset>
-                </form> 
-            </div>
+                    {{!-- Button to post --}}
+                    <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                        <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button>
+                    </div>
+                </fieldset>
+            </form> 
+        </div>
     </div>
 
     {{!-- Image --}}

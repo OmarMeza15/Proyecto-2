@@ -30,36 +30,44 @@
     <div class="uk-card">
         <div class="country-text">
 
-                    <h1 class="title-catalogue">Countries:</h1>
+            <h1 class="main-country">Countries:</h1>
 
-                    <p class="text-cataloque">Which one are you looking for ?</p>
+            <p class="flag-text-country">Which one are you looking for ?</p>
 
-                    <div class="dropdown country-enter1">
+                    
 
-                    <button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{!-- <button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <strong>Country</strong>
-                    </button>
+                    </button> --}}
 
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Argentina</a></li>
-                        <li><a class="dropdown-item" href="#">Bolivia</a></li>
-                        <li><a class="dropdown-item" href="#">Brasil</a></li>
-                        <li><a class="dropdown-item" href="#">Canada</a></li>
-                        <li><a class="dropdown-item" href="#">Chile</a></li>
-                        <li><a class="dropdown-item" href="#">Colombia</a></li>
-                        <li><a class="dropdown-item" href="#">Hungria</a></li>
-                        <li><a class="dropdown-item" href="#">Mexico</a></li>
-                        <li><a class="dropdown-item" href="#">Usa</a></li>            
-                    </ul>
+            <form class="dropdown country-enter1" action="/country/eachCountry">
 
-                    </div>
+                <label for="country-select">Country:</label>
+                <select class="date-rect" name="country" id="country-select">
+                    <option value="">Please choose a country</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Hungria">Hungria</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Usa">Usa</option>            
+                </select>
 
-                    <div >
+                <div>
                     <button type="submit" class="country-list country-enter2">Search</button>
-                    </div>
+                </div>
+                    
+                    
+                    
+            </form>
+        
+        
         </div>
-    </div>
 
+    </div>
 </div>
 
 

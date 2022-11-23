@@ -3,59 +3,60 @@
     {{!-- Profile info --}}
     <div>
 
-            <div class="uk-card uk-card-default uk-card-body uk-position-z-index uk-flex uk-flex-column uk-flex-middle" uk-sticky="end: #js-oversized; offset: 80">
+        <div class="uk-card uk-card-default uk-card-body uk-position-z-index uk-flex uk-flex-column uk-flex-middle" uk-sticky="end: #js-oversized; offset: 80">
             
-                {{#if currentUser}}
-                    {{#with currentUser}}
+            {{#if currentUser}}
+                {{#with currentUser}}
 
-                        <div class="uk-card-media-top">
-                            <img src="{{ profilePic }}" width="150" height="150" class="uk-border-circle" alt="">
-                        </div>
-                        <div class="uk-card-body">
-                            <h3 class="uk-text-capitalize">{{ name }}  {{ lastName }}</h3>
-                            <h5>Country: {{ country }}</h5>
-                            <h6>Birthday: {{ dateOfBirth }}</h6>
-                            <h6>Occupation: {{ occupation }}</h6>
-                            <h3>About me:</h3>
-                            <p>{{ aboutUser }}</p>
-                        </div>
+                    <div class="uk-card-media-top">
+                         <img src="{{ profilePic }}" width="150" height="150" class="uk-border-circle" alt="">
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-text-capitalize">{{ name }}  {{ lastName }}</h3>
+                        <h5>Country: {{ country }}</h5>
+                        <h6>Birthday: {{ dateOfBirth }}</h6>
+                        <h6>Occupation: {{ occupation }}</h6>
+                        <h3>About me:</h3>
+                        <p>{{ aboutUser }}</p>
+                    </div>
 
-                    {{/with}}
-                {{/if}}
+                {{/with}}
+            {{/if}}
                 
-            </div>
+        </div>
 
     </div>
 
     {{!-- Posts --}}
     <div>
 
-            <div class="uk-padding">
+        <div class="uk-padding">
 
-                {{#if currentUser}}
+            {{#if currentUser}}
                     
-                        {{#each post}}
-                            <div class="uk-card uk-card-hover uk-grid-medium">
-                                <div class="uk-card-media-top">
-                                    <img src="{{ image }}" width="1800" height="1200" alt="">
-                                </div>
-                                <div class="uk-card-header">
-                                    <h3 class="uk-card-title uk-text-capitalize">{{ title }}</h3>
-                                    <p>{{ country }}</p>
-                                    <p class="uk-text-muted uk-text-small">{{ date }}</p>
-                                </div>
+                {{#each post}}
+                    <div class="uk-card uk-card-hover uk-grid-medium">
+                        <div class="uk-card-media-top">
+                            <img src="{{ image }}" width="1800" height="1200" alt="">
+                        </div>
 
-                                <p class="uk-text-muted uk-text-truncate">{{ text }}</p>
+                        <div class="uk-card-header">
+                            <h3 class="uk-card-title uk-text-capitalize">{{ title }}</h3>
+                            <p>{{ country }}</p>
+                            <p class="uk-text-muted uk-text-small">{{ date }}</p>
+                        </div>
 
-                                <div class="uk-card-footer">
-                                    <a class="uk-button uk-button-text" href="/post">Read more</a>
-                                </div>
-                            </div>
-                        {{/each}}
+                        <p class="uk-text-muted uk-text-truncate">{{ text }}</p>
+
+                        <div class="uk-card-footer">
+                            <a class="uk-button uk-button-text" href="/post">Read more</a>
+                        </div>
+                    </div>
+                {{/each}}
                    
-                {{/if}}
+            {{/if}}
 
-            </div>
+        </div>
 
     </div>
 
