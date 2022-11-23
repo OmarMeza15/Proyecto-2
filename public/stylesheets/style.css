@@ -128,16 +128,28 @@ i{
   margin-right: 50px
 }
 .title-catalogue{
-  color: #A44A3F;
+  color: #020000;
   font-family: 'Libre Bodoni', serif;
   padding: 20px;
   font-size: 40px;
   margin: 0 20px;
 }
-.row-pics{
+/* .row-pics{
   flex-direction: row;
   align-content: center;
   width: 70vw;
+} */
+.row-pics1{
+  padding: 20px;
+  flex-direction: column;
+  align-content: center;
+  width: 70vw;
+}
+.row-pics1 img {
+  margin: 10px;
+  width: 170px;
+  height: 140px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .card-country{
   margin: 0;
@@ -198,6 +210,7 @@ button:hover{
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin-right: 15px;
 }
 .about-profile{
   font-family: 'Noto Sans', sans-serif;
@@ -218,6 +231,9 @@ button:hover{
   line-height: initial;
   padding: 10px;
 }
+.bolder-text-profile{
+  font-weight: bolder;
+}
 /* eachCountry */
 .flags{
   width: 15vw;
@@ -228,14 +244,15 @@ button:hover{
 .flag-text-country{
   display:flex;
   align-items: center;
-  padding: 10px 20px 20px;
+  padding: 10px 5px 30px;
 }
 .flag-text-country p{
   width: 25vw;
   text-align: center;
   font-family: 'Noto Sans', sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   color: #3D405B;
+  font-weight: bolder;
 }
 .main-country{
   margin-top: 20px;

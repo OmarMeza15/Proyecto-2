@@ -8,27 +8,41 @@
                 </div>
 
                 <div class="about-profile">
-                    <h3>{{name}} {{lastName}}</h3>
-                    <ul class="list-profile">
+                    <h3 class="bolder-text-profile">{{name}} {{lastName}}</h3>
+                    <ul class="list-profile bolder-text-profile">
                         <li>{{country}}</li>
                         <li>{{dateOfBirth}}</li>
                         <li>{{occupation}}</li>
                     </ul>
-                    <h5>About me:</h5>
-                    <p>{{aboutUser}}</p>
+                    <h5 class="bolder-text-profile">About me:</h5>
+                    <p class="bolder-text-profile">{{aboutUser}}</p>
                 </div>
             {{/with}}
         {{/if}}
     </div>
+
+
+    <div class="row g-0 bg-light position-relative div-profile-card">
+        <div class="col-md-6 mb-md-0 p-md-4">
+            <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="w-100" alt="postImage">
+        </div>
+        <div class="col-md-6 p-4 ps-md-0">
+            <h5 class="mt-0">Columns with stretched link</h5>
+            <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+            <a href="/post">
+                <button class="btn btn-outline-success login-layout">Read more</button>
+            </a>
+        </div>
+    </div>
     
-    <div class="div-profile-card">
+    {{!-- <div class="div-profile-card">
         <div class="card" style="width: 30rem;">
             <img src="https://images.unsplash.com/photo-1599844240448-6c2b0e8365cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHZpYWplc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top" alt="users-pics">
             <div class="card-body">
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
         </div>
-    </div>
+    </div> --}}
     
 </div>
 

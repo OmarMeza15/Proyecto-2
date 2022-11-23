@@ -2,8 +2,16 @@ const router = require("express").Router();
 const Country = require('../models/Country.model');
 
 //GET para ingresa /country/catalogue
-router.get("/catalogue", (req, res) => {
-    res.render("country/catalogue", { currentUser: req.session.currentUser })
+router.get("/catalogue", async (req, res) => {
+    try {
+        const { country = "" } = req.query;
+        const data = await Country.findOne({countryName: country.toLowerCase()})
+        res.render("country/eachCountry", { currentUser: req.session.currentUser, data }) 
+    }
+    catch (err) {
+        console.log(err)
+    }
+    
 });
 
 //GET para ingresa /country/eachCountry
