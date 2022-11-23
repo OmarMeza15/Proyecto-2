@@ -7,6 +7,8 @@ router.get("/catalogue", async (req, res) => {
     try {
         const { country = "" } = req.query;
         const data = await Country.findOne({countryName: country.toLowerCase()})
+        const postDB = await Post.find()
+        res.render("country/catalogue", { currentUser: req.session.currentUser, post: postDB })
         res.render("country/eachCountry", { currentUser: req.session.currentUser, data }) 
     }
     catch (err) {

@@ -1,56 +1,52 @@
-<div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
+{{#with fullPost}}
 
-    {{!-- Slideshow --}}
-    <div>
-            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+    <div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
 
-                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 3:4; animation: fade; autoplay: true; autoplay-interval: 6000" tabindex="-1" uk-slideshow>
+        {{!-- Slideshow --}}
+        <div>
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
 
-                    <ul class="uk-slideshow-items">
-                        <li>
-                            <img src="https://www.momondo.com/discover/wp-content/uploads/sites/260/2020/02/DEST_NORWAY_LOFOTEN_GettyImages-1050245738_Universal_Within-usage-period_37137-1500x1312.jpg" alt="" uk-cover>
-                        </li>
-                        <li>
-                            <img src="https://newsblazelive.com/wp-content/uploads/2021/06/senior-citizens-travel-insurance_cd09659466.jpeg" alt="" uk-cover>
-                        </li>
-                        <li>
-                            <img src="https://www.destinationanalysts.com/wp-content/uploads/2020/05/image-1030x626.png" alt="" uk-cover>
-                        </li>
-                    </ul>
+                    <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 3:4; animation: fade; autoplay: true; autoplay-interval: 6000" tabindex="-1" uk-slideshow>
 
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img src="{{ image }}" alt="" uk-cover>
+                            </li>
+                        </ul>
 
-                </div>
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
 
-            </div>
-    </div>
-
-    {{!-- Body of post --}}
-    <div>
-            <div class="uk-card uk-card-body">
-                <article class="uk-article">
-
-                    <h1 class="uk-article-title">Heading</h1>
-
-                    <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
-
-                    <p class="uk-text-lead"><a class="uk-link-reset" href="">Country.</a></p>
-
-                    <p class="uk-text-lead uk-text-lighter">Date</p>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                    <div class="uk-grid-small uk-child-width-auto" uk-grid>
-                        <div>
-                            <a class="uk-button uk-button-text" href="#">5 Comments</a>
-                        </div>
                     </div>
 
-                </article>
-            </div>
+                </div>
+        </div>
+
+        {{!-- Body of post --}}
+        <div>
+                <div class="uk-card uk-card-body">
+                    <article class="uk-article">
+
+                        <h1 class="uk-article-title">{{ title }}</h1>
+
+                        <p class="uk-article-meta">Written by <a href="#">Super User</a> on 12 April 2012.</p>
+
+                        <p class="uk-text-lead"><a class="uk-link-reset" href="">{{ country }}</a></p>
+
+                        <p class="uk-text-lead uk-text-lighter">{{ date }}</p>
+
+                        <p>{{ text }}</p>
+
+                        <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                            <div>
+                                <a class="uk-button uk-button-text" href="#">5 Comments</a>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+        </div>
+
     </div>
 
-</div>
+{{/with}}

@@ -16,8 +16,17 @@ router.post("/create", (req, res, next) => {
     .catch((err) => console.log(err))
 });
 
-router.get("/post", (req, res, next) => {
-    res.render("posts/post");
+router.get("/post/:postId", async (req, res, next) => {
+    try {
+        const { postId } = req.params
+
+        console.log("-----------> ", postId)
+        const postInfo = await Post.findById(postId);
+        console.log("-----------> ", postInfo)
+        res.render("posts/post", {fullPost: postInfo});
+    } catch(err) {
+        console.log(err);
+    }
 });
 
 module.exports = router;
