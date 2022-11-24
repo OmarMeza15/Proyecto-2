@@ -3,7 +3,7 @@ const router = express.Router();
 const Post = require("../models/Post.model");
 
 router.get("/create", (req, res, next) => {
-    res.render("posts/createPost");
+    res.render("posts/createPost", { currentUser: req.session.currentUser });
 });
 
 
@@ -23,7 +23,7 @@ router.get("/post/:postId", async (req, res, next) => {
         console.log("-----------> ", postId)
         const postInfo = await Post.findById(postId);
         console.log("-----------> ", postInfo)
-        res.render("posts/post", {fullPost: postInfo});
+        res.render("posts/post", {fullPost: postInfo, currentUser: req.session.currentUser});
     } catch(err) {
         console.log(err);
     }
