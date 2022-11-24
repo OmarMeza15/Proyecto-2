@@ -383,16 +383,36 @@ i{
   align-content: stretch;
 }
 
-#orangeButton {
+#orangeButton, #loginButton, #signupButton, #createPostButton, #newCountryButton, #postButton, #catalogueButton {
   background-color: #E66155;
   color: white;
 }
 
-#orangeLogo, #indexHeading, #login, #signup {
+#orangeLogo, #indexHeading, #login, #signup, #aboutTitle, #postTitle, #createPostTitle, #newCountry, #profilePosts, #welcomeTitle, #catalogueTitle, #eachCountryTitle {
 color: #E66155;
 font-family: 'Libre Baskerville', serif;
 }
 
 #orangeName {
   color: #E66155;
+}
+
+.overlayImage {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeText {
+  color: #686868;
+}
+
+.hrWelcome {
+  height: 10px;
+  border-color: #E66155;
+  background-color: #E66155;
+  margin-top: 0;
 }

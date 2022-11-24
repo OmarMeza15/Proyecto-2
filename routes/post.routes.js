@@ -25,21 +25,6 @@ router.post("/create/:id", (req, res, next) => {
     })
     .then(() => res.redirect("/user/profile"))
     .catch(err => console.log(err));
-        
-    
-    // try{
-    //     const { title, country, date, text, image, author } = req.body;
-    //     // console.log("this is the body", req.body)
-        
-    //     const postNew = await Post.create({ title, country, date, text, image, author })
-    //     const pushComment = await User.findByIdAndUpdate(_id, { $push: { posts: postNew._id } })
-    //     res.redirect("/user/profile")
-    //     // return pushComment
-    //     // console.log("nuevo post: ", postNew);
-        
-    // } catch(err){
-    //     console.log(err);
-    // } 
 });
 
 
@@ -55,8 +40,8 @@ router.get("/post/:postId/editPost", async (req, res) => {
         console.log(err)
     }
 });
-//ruta para actualizar el post 
 
+//ruta para actualizar el post 
 router.post("/post/:postId/editPost", async (req, res) => {
     console.log("Datos", req.body);
     const { postId } = req.params;
@@ -77,7 +62,6 @@ router.post("/post/:postId/delete", (req, res) => {
 
 
  //guardar data del post 
-
 router.get("/post/:postId", async (req, res, next) => {
     try {
         const { postId } = req.params

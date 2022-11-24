@@ -1,33 +1,20 @@
 {{!-- Header Home--}}
-    {{!-- <div class="uk-container uk-container-expand uk-height-large uk-flex uk-flex-column uk-flex-center" uk-scrollspy="cls: uk-animation-fade; target: h1, p, div, a; delay: 400;">
 
-        <div>
-            <div id="header" class="uk-container uk-flex uk-flex-column uk-flex-middle uk-text-center">
-                <h1 class="uk-text-center"><span>Welcome!</span></h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                <p>Assumenda accusamus aperiam voluptate tempore aliquid praesentium dicta esse nesciunt provident vel enim magnam dolore odit voluptatem.</p>  
-            </div>
-            
-            
-            <div class="uk-height-small uk-background-cover uk-light uk-flex uk-flex-column uk-flex-center" uk-parallax="bgy: -200" style="background-image: url('https://prod-virtuoso.dotcmscloud.com/dA/188da7ea-f44f-4b9c-92f9-6a65064021c1/previewImage/PowerfulReasons_hero.jpg');">
-                <div class="uk-overlay-default uk-position-cover"></div>
-                <div class="uk-overlay uk-position-center">
-                    <a id="button" class="uk-button uk-button-secondary  uk-align-center" href="/create">Click to find out!</a>
-                </div>
-            </div>
-        </div>
 
-    </div> --}}
-
-    <div class="uk-container uk-container-expand">
 
         <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -200" style="background-image: url('https://prod-virtuoso.dotcmscloud.com/dA/188da7ea-f44f-4b9c-92f9-6a65064021c1/previewImage/PowerfulReasons_hero.jpg');">
-            <div class="uk-overlay uk-overlay-default"></div>
-            <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">Headline</h1>
+            <div class="overlayImage">
 
-        </div>    
+                    <h1 id="welcomeTitle" class="uk-text-center">Headline</h1>
+                    <p class="welcomeText">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a id="postButton" class="uk-button uk-button-default uk-align-center" href="/create">Click to start a new post!</a>
+
+            </div>
+
+        </div>
+
+        <hr class="hrWelcome">    
     
-    </div>
 
     {{!-- Title Countries--}}
     <div class="uk-container uk-container-small uk-height-small uk-flex uk-flex-bottom uk-flex-center" uk-scrollspy="cls: uk-animation-fade; delay: 400;">    
@@ -151,7 +138,7 @@
 
         {{!-- Button to catalogue --}}
         <div class="uk-container uk-text-center">
-            <a id="button" class="uk-button uk-button-text" href="/auth/catalogue">Click to know more!</a>
+            <a id="button" class="uk-button uk-button-text" href="/country/catalogue">Click to know more!</a>
         </div>
 
     </div>

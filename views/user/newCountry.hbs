@@ -1,36 +1,69 @@
-{{!-- Form--}}
-<div>
-    <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-        <form action="/user/newCountry" method="post">
-            <h2>New Country</h2>
-                    
-            {{!-- Inputs --}}
-            <fieldset class="uk-fieldset">
+{{!-- Grid for the image and form --}}
+<div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
 
-                {{!-- Input for the title of the story --}}
-                <legend class="uk-legend">Name</legend>
-                <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="Colombia" name="countryName">
-                </div>
+    {{!-- Form--}}
+    <div>
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <form action="/user/newCountry" method="post">
+                <h2 id="newCountry">New Country</h2>
                         
-                {{!-- Input for the country --}}
-                <legend class="uk-legend">Fun fact</legend>
-                <div class="uk-margin">
-                        <input class="uk-textarea" rows="6" type="text" placeholder="Did you know that...?" name="info">
-                </div>
+                {{!-- Inputs --}}
+                <fieldset class="uk-fieldset">
 
-                {{!-- Input for a phot link --}}
-                <legend class="uk-legend">Add a Photo of the flag</legend>
-                <div class="uk-margin">
-                    <input class="uk-input" type="text" placeholder="https://image.com/..." name="flagImg">
-                </div>
+                    {{!-- Input for the name of the country --}}
+                    <legend class="uk-legend">Country name</legend>
+                    <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Colombia" name="countryName">
+                    </div>
+                            
+                    {{!-- Input for the country --}}
+                    <legend class="uk-legend">Fun fact</legend>
+                    <div class="uk-margin">
+                            <input class="uk-textarea" rows="6" type="text" placeholder="Did you know that...?" name="info">
+                    </div>
 
-                {{!-- Button to post --}}
-                <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
-                    <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button>
-                </div>
-            </fieldset>
-        </form> 
+                    {{!-- Input for a photo link --}}
+                    <legend class="uk-legend">Add a Photo of the flag</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="https://image.com/..." name="flagImg">
+                    </div>
+
+                    {{!-- Button to post --}}
+                    <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                        {{!-- <button id="newCountryButton" class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button> --}}
+                        <button id="newCountryButton" class="uk-button uk-button-default uk-width-1-1" type="submit" onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> Country added to the catalogue!'})">Add!</button>
+                    </div>
+                </fieldset>
+            </form> 
+        </div>
     </div>
-</div>    
+
+    {{!-- Image slideshow --}}
+    <div class="uk-margin-medium-left">
+            <div class="uk-card uk-card-default uk-card-body">
+
+                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 3:4; animation: fade; autoplay: true; autoplay-interval: 6000" tabindex="-1" uk-slideshow>
+
+                    <ul class="uk-slideshow-items">
+                        <li>
+                            <img src="https://ep00.epimg.net/elviajero/imagenes/2018/05/25/album/1527248206_947021_1527250418_album_normal.jpg" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="https://dam.ngenespanol.com/wp-content/uploads/2020/01/Israel-tel-aviv.jpg" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/7625JNILANAO5D3UTUOM4ZBS7Y.jpg" alt="" uk-cover>
+                        </li>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                </div>
+
+            </div>
+    </div>   
+
+</div>
+
     

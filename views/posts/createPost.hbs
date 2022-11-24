@@ -5,7 +5,7 @@
     <div>
         <div class="uk-card uk-card-default uk-card-hover uk-card-body">
             <form action="/create/{{currentUser._id}}" method="post">
-                    <h2>Tell us about your story!</h2>
+                    <h2 id="createPostTitle">Tell us about your story!</h2>
                     
                 {{!-- Inputs --}}
                 <fieldset class="uk-fieldset">
@@ -15,12 +15,6 @@
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="The most beautiful beach!" name="title">
                     </div>
-
-                    {{!-- Input for the author of the story --}}
-                    {{!-- <legend class="uk-legend" value="{{this._id}}">Author{{name}}</legend>
-                    <div class="uk-margin">
-                        <input class="uk-input" type="text" name="author">
-                    </div> --}}
                         
                     {{!-- Input for the country --}}
                     <legend class="uk-legend">Where was it?</legend>
@@ -48,7 +42,7 @@
 
                     {{!-- Button to post --}}
                     <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
-                        <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Post!</button>
+                        <button id="createPostButton" class="uk-button uk-button-default uk-width-1-1" type="submit">Post!</button>
                     </div>
                 </fieldset>
                 
@@ -56,12 +50,29 @@
         </div>
     </div>
 
-    {{!-- Image --}}
-    <div>
-            <div class="uk-card uk-card-body uk-card-hover">
+    {{!-- Image slideshow --}}
+    <div class="uk-margin-large-left">
+            <div class="uk-card uk-card-default uk-card-body">
 
-                <img src="https://cdn.thewirecutter.com/wp-content/media/2020/11/notebooks-2048px-1990.jpg?auto=webp&quality=75&width=1024" alt="" uk-cover name="image">
-            
+                <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 3:4; animation: fade; autoplay: true; autoplay-interval: 6000" tabindex="-1" uk-slideshow>
+
+                    <ul class="uk-slideshow-items">
+                        <li>
+                            <img src="https://www.racq.com.au/-/media/project/racqgroup/racq/articles/holidays/2022/6/woman-on-overseas-holilday.jpg?rev=51706da208c84ae6b894b4acfec8f073" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="https://travelnevada.com/wp-content/uploads/2022/09/Homepage_Featured-1.jpg" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="https://www.intrepidgroup.travel/sites/default/files/2018-07/home-banner-02%402x.jpg" alt="" uk-cover>
+                        </li>
+                    </ul>
+
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                </div>
+
             </div>
     </div>
 
