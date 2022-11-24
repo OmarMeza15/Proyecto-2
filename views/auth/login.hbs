@@ -2,34 +2,34 @@
 
     {{!-- Title --}}
     <div class="d-flex flex-row justify-content-center align-items-center">
-      <h2>Log In</h2>
+      <h2 id="login">Log In</h2>
     </div>
     
     {{!-- Grid for the image and form --}}
     <div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
 
         {{!-- Form --}}
-        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-padding-small">
 
-            <form action="/auth/login" method="POST" class="d-flex flex-row">
-          <div class="form-login">
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" name="email" value="pepitoperez@perez.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" name="password" value="peRez12345">
-            </div>
-            <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
-                <button class="uk-button uk-button-default uk-width-1-1" type="submit">Enter</button>
-            </div>
-          </div>
-            
-          {{#if errorMessage}}
-            <p class="error">{{errorMessage}}</p>
-          {{/if}}
-            </form>
+          <form action="/auth/login" method="POST" class="d-flex flex-row">
+              <div class="form-login">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" name="email" value="omar@meza.com">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password" value="omar15">
+                </div>
+                <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                    <button class="uk-button uk-button-default uk-width-1-1" type="submit">Enter</button>
+                </div>
+              </div>
+                
+              {{#if errorMessage}}
+                <p class="error">{{errorMessage}}</p>
+              {{/if}}
+          </form>
 
         </div>
         

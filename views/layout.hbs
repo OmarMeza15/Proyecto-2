@@ -48,7 +48,9 @@
                   {{#with currentUser}}
                     <div class="uk-navbar uk-flex uk-flex-middle uk-flex-center uk-text-center">
                         <h6 id="orangeName" class="uk-margin-remove uk-padding-small">{{ name }}  {{ lastName }}</h6>
-                        <img class="uk-border-circle" width="40" height="40" src="{{ profilePic }}" alt="Avatar">
+                        <div class="uk-container uk-padding-remove-horizontal" style="width: 40px; height: 40px">
+                            <img class="uk-comment-avatar uk-border-circle" src="{{ profilePic }}" alt="Avatar">
+                        </div>
                     </div>
                   {{/with}}
 

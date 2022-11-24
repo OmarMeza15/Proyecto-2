@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Noto+Sans:ital,wght@0,200;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Noto+Sans:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
 body{
   margin: 0;
   padding: 0;
@@ -378,7 +380,6 @@ i{
 }
 .center-title{
   display: flex;
-  padding-bottom: 40px;
   align-content: stretch;
 }
 
@@ -387,7 +388,11 @@ i{
   color: white;
 }
 
-#orangeLogo, #orangeName {
-  color: #E66155;
+#orangeLogo, #indexHeading, #login, #signup {
+color: #E66155;
+font-family: 'Libre Baskerville', serif;
 }
 
+#orangeName {
+  color: #E66155;
+}

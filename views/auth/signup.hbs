@@ -1,108 +1,108 @@
-<div class="container-fluid login-container fondo-login" >
-  <div id="login-form">
-    <div class="d-flex flex-row justify-content-center align-items-center center-title">
-      <div class="center-title">
-        <a class="navbar-brand" href="#">
-          <i class="bi bi-globe-americas"></i>
-        </a>
-        <h2>Signup</h2>
-      </div>
+
+
+    <div class="uk-container uk-flex uk-flex-center">
+        <h2 id="signup">SignUp</h2>
     </div>
-    
-    <form action="/auth/signup" method="POST" class="d-flex flex-row signup-font">
-      <div class="form-login form-signup">
 
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Name" name="name" value="">
+    <div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
+
+        {{!-- Form--}}
+        <div>
+            <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+                <form action="/auth/signup" method="post">
+                        <h2>Tell us about your story!</h2>
+                        
+                    {{!-- Inputs --}}
+                    <fieldset class="uk-fieldset">
+
+                        {{!-- Input for the name --}}
+                        <legend class="uk-legend">Name</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Juan" name="name">
+                        </div>
+                            
+                        {{!-- Input for the last name --}}
+                        <legend class="uk-legend">Last name</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Perez" name="lastName">
+                        </div>
+
+                        {{!-- Input for the email --}}
+                        <legend class="uk-legend">Email</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="juan@perez.com" name="email">
+                        </div>
+
+                        {{!-- Input for the password --}}
+                        <legend class="uk-legend">Password</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="password" placeholder="******" name="password">
+                        </div>
+                            
+                        {{!-- input for the date --}}
+                        <legend class="uk-legend">Your birthdate</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="date" name="dateOfBirth">
+                        </div>
+
+                        {{!-- Select for the country --}}
+                        <legend class="uk-legend">Country</legend>
+                        <div class="uk-margin">
+
+                            <select name="country" class="uk-select">
+                              <option value="">Please choose a country</option>
+                              <option value="Argentina">Argentina</option>
+                              <option value="Bolivia">Bolivia</option>
+                              <option value="Brasil">Brasil</option>
+                              <option value="Canada">Canada</option>
+                              <option value="Chile">Chile</option>
+                              <option value="Colombia">Colombia</option>
+                              <option value="Hungria">Hungria</option>
+                              <option value="Mexico">Mexico</option>
+                              <option value="Usa">Usa</option>
+                            </select>
+
+                        </div>
+
+                        {{!-- Input about you --}}
+                        <legend class="uk-legend">About you</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Tell us something about you!" name="aboutUser">
+                        </div>
+
+                        {{!-- Input for the occupation --}}
+                        <legend class="uk-legend">Occupation</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Student" name="occupation">
+                        </div>
+
+                        {{!-- Input for a phot link --}}
+                        <legend class="uk-legend">Add a Photo!</legend>
+                        <div class="uk-margin">
+                            <input class="uk-input" type="text" placeholder="Paste the link of you photo here" name="profilePic">
+                        </div>
+
+                        {{!-- Button to post --}}
+                        <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                            <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Login</button>
+                        </div>
+                    </fieldset>
+
+                    {{#if errorMessage}}
+                      <p class="error">{{errorMessage}}</p>
+                    {{/if}}
+                    
+                </form> 
+            </div>
         </div>
 
-        <div class="mb-3">
-          <input type="text" class="form-control" placeholder="Lastname" name="lastName" value="">
+        {{!-- Image --}}
+        <div>
+                <div class="uk-card uk-card-body">
+
+                    <img class="pic-signup" src="/images/pic-for-signup.jpeg" alt="travelling by car" uk-cover/>
+                
+                </div>
         </div>
 
-        <div class="mb-3">
-          <input type="email" class="form-control" placeholder="Email address" name="email" value="">
-        </div>
-
-        <div class="mb-3">
-          <input type="password" class="form-control"  placeholder="Password" name="password" value="">
-        </div>
-
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Date of birth</label>
-          <input type="date" name="dateOfBirth" min="1980-01-01" max="2022-12-31" value="<?php echo date(" Y-m-d ");?" class="date-rect">
-        </div>
-
-           <div class="dropdown ">
-            {{!--<button class="dropdown-toggle country-list" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Country
-            </button>
-
-            <ul class="dropdown-menu" name="country">
-              <li><a class="dropdown-item" href="#">Argentina</a></li>
-              <li><a class="dropdown-item" href="#">Bolivia</a></li>
-              <li><a class="dropdown-item" href="#">Brasil</a></li>
-              <li><a class="dropdown-item" href="#">Canada</a></li>
-              <li><a class="dropdown-item" href="#">Chile</a></li>
-              <li><a class="dropdown-item" href="#">Colombia</a></li>
-              <li><a class="dropdown-item" href="#">Hungria</a></li>
-              <li><a class="dropdown-item" href="#">Mexico</a></li>
-              <li><a class="dropdown-item" href="#">Usa</a></li>            
-            </ul> --}}
-
-
-            <label for="country-select">Country:</label>
-            <select name="country" id="country-select" class="date-rect">
-              <option value="">Please choose a country</option>
-              <option value="Argentina">Argentina</option>
-              <option value="Bolivia">Bolivia</option>
-              <option value="Brasil">Brasil</option>
-              <option value="Canada">Canada</option>
-              <option value="Chile">Chile</option>
-              <option value="Colombia">Colombia</option>
-              <option value="Hungria">Hungria</option>
-              <option value="Mexico">Mexico</option>
-              <option value="Usa">Usa</option>
-            </select>
-
-
-            {{!-- <button class="btn btn-light dropdown-toggle" type="select" data-bs-toggle="dropdown" aria-expanded="false">
-              Country:
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Argentina</a></li>
-              <li><a class="dropdown-item" href="#">Bolivia</a></li>
-              <li><a class="dropdown-item" href="#">Brasil</a></li>
-              <li><a class="dropdown-item" href="#">Canada</a></li>
-              <li><a class="dropdown-item" href="#">Chile</a></li>
-              <li><a class="dropdown-item" href="#">Colombia</a></li>
-              <li><a class="dropdown-item" href="#">Hungria</a></li>
-              <li><a class="dropdown-item" href="#">Mexico</a></li>
-              <li><a class="dropdown-item" href="#">Usa</a></li>            
-            </ul> --}}
-          </div>
-
-        <div class="mb-3">
-          <label  class="form-label">About you:</label>
-          <input type="text" class="form-control" name="aboutUser" value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quam consequuntur debitis">
-        </div>
-
-        <div class="mb-3">
-          <label  class="form-label">Occupation:</label>
-          <input type="text" class="form-control" name="occupation" value="student">
-        </div>
-
-        <div class="btn-login">
-          <button type="submit" class="btn btn-light">Enter</button>
-        </div>
-      </div>
-      <div class="d-flex">
-        <img class="pic-signup" src="/images/pic-for-signup.jpeg" alt="travelling by car"/>
-      </div>
-        
-      {{#if errorMessage}}
-        <p class="error">{{errorMessage}}</p>
-      {{/if}}
-    </form>
-  </div>
-</div>
+    </div>       
