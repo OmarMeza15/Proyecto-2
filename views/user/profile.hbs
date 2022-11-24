@@ -50,6 +50,10 @@
 
                         <div class="uk-card-footer">
                             <a class="uk-button uk-button-text" href="/post/{{_id}}">Read more</a>
+                            <a class="uk-button uk-button-text" href="/post/{{_id}}/editPost">Edit</a>
+                            <form action="/post/{{_id}}/delete" method="post">
+                                <button class="uk-button uk-button-secondary" type="submit">Delete</button>
+                            </form>
                         </div>
                     </div>
                 {{/each}}

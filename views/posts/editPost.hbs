@@ -1,0 +1,60 @@
+<div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
+
+    {{!-- Form--}}
+    <div>
+        <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+            <form action="/post/{{_id}}/editPost" method="post">
+                    <h2>Editing your story!</h2>
+                    
+                {{!-- Inputs --}}
+                <fieldset class="uk-fieldset">
+
+                    {{!-- Input for the title of the story --}}
+                    <legend class="uk-legend">Title</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="The most beautiful beach!" name="title" value="{{title}}">
+                    </div>
+                        
+                    {{!-- Input for the country --}}
+                    <legend class="uk-legend">Where was it?</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Mexico" name="country" value="{{country}}">
+                    </div>
+                        
+                    {{!-- input for the date --}}
+                    <legend class="uk-legend">When was it?</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="date" name="date" value="{{date}}">
+                    </div>
+
+                    {{!-- Input for the story --}}
+                    <legend class="uk-legend">What's your story?</legend>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="6" placeholder="Lorem, ipsum dolor sit..." name="text">{{text}}</textarea>
+                    </div>
+
+                    {{!-- Input for a phot link --}}
+                    <legend class="uk-legend">Add a Photo!</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Paste the link of you image here" name="image" value="{{image}}">
+                    </div>
+
+                    {{!-- Button to post --}}
+                    <div class="uk-margin uk-flex uk-flex-column uk-flex-middle">
+                        <button class="uk-button uk-button-secondary uk-width-1-1" type="submit">Edit!</button>
+                    </div>
+                </fieldset>
+            </form> 
+        </div>
+    </div>
+
+    {{!-- Image --}}
+    <div>
+            <div class="uk-card uk-card-body uk-card-hover">
+
+                <img src="https://cdn.thewirecutter.com/wp-content/media/2020/11/notebooks-2048px-1990.jpg?auto=webp&quality=75&width=1024" alt="" uk-cover name="image">
+            
+            </div>
+    </div>
+
+</div>    
