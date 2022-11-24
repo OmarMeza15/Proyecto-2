@@ -6,7 +6,7 @@ const Post = require("../models/Post.model");
 
 //GET para ingresar /user/profile
 router.get("/profile", (req, res) => {
-    Post.find()
+    Post.find({author: req.session.currentUser._id})
         .then((PostDB) => res.render("user/profile", { currentUser: req.session.currentUser, post: PostDB }))
         .catch((err) => console.log(err));
 });

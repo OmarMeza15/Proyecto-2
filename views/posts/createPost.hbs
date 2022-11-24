@@ -4,7 +4,7 @@
     {{!-- Form--}}
     <div>
         <div class="uk-card uk-card-default uk-card-hover uk-card-body">
-            <form action="/create" method="post">
+            <form action="/create/{{currentUser._id}}" method="post">
                     <h2>Tell us about your story!</h2>
                     
                 {{!-- Inputs --}}
@@ -15,6 +15,12 @@
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="The most beautiful beach!" name="title">
                     </div>
+
+                    {{!-- Input for the author of the story --}}
+                    {{!-- <legend class="uk-legend" value="{{this._id}}">Author{{name}}</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" name="author">
+                    </div> --}}
                         
                     {{!-- Input for the country --}}
                     <legend class="uk-legend">Where was it?</legend>

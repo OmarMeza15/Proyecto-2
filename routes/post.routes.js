@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require("../models/Post.model");
+const User = require('../models/User.model');
 
 
 router.get("/post", (req, res) => {
@@ -12,17 +13,33 @@ router.get("/create", (req, res, next) => {
 });
 
 //crear un post
-router.post("/create", async (req, res, next) => {
-    try{
-        const { title, country, date, text, image, author } = req.body;
-        // console.log("this is the body", req.body)
+router.post("/create/:id", (req, res, next) => {
+    const { title, country, date, text, image } = req.body;
+    const { id } = req.params;
+    console.log(req.body, req.params)
+     
+    Post.create({ title, country, date, text, image, author: id })
+    .then((dbPost) => {
+        return User.findByIdAndUpdate(id, {$push: {posts: dbPost._id }})
         
-        const postNew = await Post.create({ title, country, date, text, image, author })
-        // console.log("nuwvo post: ", postNew);
-        res.redirect("/user/profile")
-    } catch(err){
-        console.log(err);
-    } 
+    })
+    .then(() => res.redirect("/user/profile"))
+    .catch(err => console.log(err));
+        
+    
+    // try{
+    //     const { title, country, date, text, image, author } = req.body;
+    //     // console.log("this is the body", req.body)
+        
+    //     const postNew = await Post.create({ title, country, date, text, image, author })
+    //     const pushComment = await User.findByIdAndUpdate(_id, { $push: { posts: postNew._id } })
+    //     res.redirect("/user/profile")
+    //     // return pushComment
+    //     // console.log("nuevo post: ", postNew);
+        
+    // } catch(err){
+    //     console.log(err);
+    // } 
 });
 
 
