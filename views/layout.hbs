@@ -1,6 +1,6 @@
 <html lang="en">
 
-  <head>
+    <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -13,103 +13,106 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     {{!-- Uikit --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/css/uikit.min.css" />
-  </head>
+    </head>
 
-  <body>
-    <div class="container-fluid fondo">
-      <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container-fluid">
+    <body>
 
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        {{!-- Navbar --}}
+        <nav class="uk-navbar-container uk-navbar-transparent uk-padding-small uk-padding-remove-top" uk-navbar>
 
-          <div class="collapse navbar-collapse" id="navbar-toggler">
-            <a class="navbar-brand" href="/">
-              <i class="bi bi-globe-americas"></i>
-            </a>
+            {{!-- Left logo --}}
+            <div class="uk-navbar-left">
 
-            <ul class="navbar-nav d-flex justify-content-center align-items-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/country/catalogue">Catalogue</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-              </li>
-            </ul>
-
-            <div class="btn-layout">
-              <div class="d-flex nav-bar-container" >
-                {{#unless currentUser}}
-
-                <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-grid-match uk-grid-small">
-                    <div class="uk-card">
-                        <a class="uk-button uk-button-default" href="/auth/login">Login</a>
-                    </div>
-                    <div class="uk-card">
-                        <a class="uk-button uk-button-secondary" href="/auth/signup">Signup</a>
-                    </div>
-                </div>
-
-                {{/unless}}
-
-                {{#if currentUser}}
-                  {{#with currentUser}}
-                    <h3 class="user-name">{{name}} {{lastName}}</h3>
-                    <img src="{{profilePic}}" class="pic-default-navbar"/>
-                  {{/with}}
-                  {{!-- <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-grid-match uk-grid-small">
-                      <div class="uk-card">
-                          <a class="uk-button uk-button-default" href="/user/profile">Profile</a>
-                      </div>
-                      <div class="uk-card">
-                          <a class="uk-button uk-button-secondary" href="/auth/logout">Logout</a>
-                      </div>
-                  </div> --}}
-                  
-                  <nav class="uk-navbar uk-margin" uk-navbar>
-                      
-                          <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
-                          <div class="uk-navbar-dropdown">
-                              <ul class="uk-nav uk-navbar-dropdown-nav">
-                                  <li class="uk-active">
-                                    <div class="uk-container">
-                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/create">Create a new post</a>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="uk-container">
-                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/user/profile">Profile</a>
-                                    </div>
-                                  </li>
-                                  <li>
-                                    <div class="uk-container">
-                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/auth/logout">Logout</a>
-                                    </div>
-                                  </li>                                  
-                              </ul>
-                          </div>
-                      
-                  </nav>
-                {{/if}}
-                
-              </div>
+              <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">TravelBook</a>
+          
             </div>
-            
-          </div>
-        </div>
-      </nav>
-    </div>
+
+            {{!-- Middle buttons (Home, Catalogue, About) --}}
+            <div class="uk-navbar-center">
+
+                <ul class="uk-navbar-nav">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">About</a></li>
+
+                </ul>
+
+            </div>
+
+            {{!-- Right user name and dropdown menu (by login in) --}}
+            {{#if currentUser}}
+              <div class="uk-navbar-right">
+                  
+                  {{!-- User name and photo --}}
+                  {{#with currentUser}}
+                    <div class="uk-navbar uk-flex uk-flex-middle uk-flex-center uk-text-center">
+                        <h6 class="uk-margin-remove uk-padding-small">{{ name }}  {{ lastName }}</h6>
+                        <img class="uk-border-circle" width="40" height="40" src="{{ profilePic }}" alt="Avatar">
+                    </div>
+                  {{/with}}
+
+                  {{!-- Dropdown menu (Create a new post, Profile, Logout) --}}
+                  <nav class="uk-navbar uk-margin">
+                      <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+                      <div class="uk-navbar-dropdown">
+                          <ul class="uk-nav uk-navbar-dropdown-nav">
+
+                              <li class="uk-active">
+                                  <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/create">Create a new post</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/user/profile">Profile</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/auth/logout">Logout</a>
+                                  </div>
+                              </li>                                  
+                          
+                          </ul>
+                      </div> 
+                  </nav>
+
+              </div>
+            {{/if}}
+
+            {{!-- Right buttons (without login in) --}}
+            {{#unless currentUser}}
+              <div class="uk-navbar-right">
+
+                  {{!-- Login button --}}
+                  <div class="uk-card">
+                      <a class="uk-button uk-button-default" href="/auth/login">Login</a>
+                  </div>
+
+                  {{!-- SignUp button --}}
+                  <div class="uk-card">
+                      <a class="uk-button uk-button-secondary" href="/auth/signup">SignUp</a>
+                  </div>
+
+              </div>
+            {{/unless}}
+
+        </nav>
+
     
+
+
     {{{body}}}
 
-    <script src="/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit-icons.min.js"></script>
-  </body>
 
+
+
+
+      <script src="/js/script.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.14/dist/js/uikit-icons.min.js"></script>
+
+    </body>
 </html>
