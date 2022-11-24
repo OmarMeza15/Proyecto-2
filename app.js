@@ -31,7 +31,7 @@ app.use("/", indexRoutes);
 //localhost:3000/auth
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
-
+//ruta post
 const postRoutes = require("./routes/post.routes");
 app.use("/", postRoutes);
 
@@ -44,6 +44,10 @@ app.use("/user", userRoutes);
 //localhost:3000/country
 const countryRoutes = require("./routes/country.routes");
 app.use("/country", countryRoutes);
+
+//ruta de comments
+const commentRoutes = require("./routes/comment.routes");
+// app.use("/comment", commentRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

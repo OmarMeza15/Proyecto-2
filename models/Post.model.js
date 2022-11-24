@@ -26,6 +26,12 @@ const postSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: "User"
     },
+    comments: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Comment"
+      }
+    ],
     image: {
       type: String,
       required: [true, "image is required."],
