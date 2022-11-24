@@ -357,16 +357,13 @@ i{
   padding: 20px;
 }
 .fondo-login{
-  background-color: #FEFAE0;
+  background-color: white;
   width: 100vw;
   height: 100vh;
   padding-top: 20px;
 }
 .fondo-login-padding{
   padding-top: 100px;
-}
-.btn-login{
-  background-color: #FEFAE0;
 }
 
 /* signup */
@@ -384,3 +381,13 @@ i{
   padding-bottom: 40px;
   align-content: stretch;
 }
+
+#orangeButton {
+  background-color: #E66155;
+  color: white;
+}
+
+#orangeLogo, #orangeName {
+  color: #E66155;
+}
+

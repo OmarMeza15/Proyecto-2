@@ -23,7 +23,7 @@
             {{!-- Left logo --}}
             <div class="uk-navbar-left">
 
-              <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home">TravelBook</a>
+              <a id="orangeLogo" class="uk-navbar-item uk-logo" href="/" aria-label="Back to Home">TravelBook</a>
           
             </div>
 
@@ -47,7 +47,7 @@
                   {{!-- User name and photo --}}
                   {{#with currentUser}}
                     <div class="uk-navbar uk-flex uk-flex-middle uk-flex-center uk-text-center">
-                        <h6 class="uk-margin-remove uk-padding-small">{{ name }}  {{ lastName }}</h6>
+                        <h6 id="orangeName" class="uk-margin-remove uk-padding-small">{{ name }}  {{ lastName }}</h6>
                         <img class="uk-border-circle" width="40" height="40" src="{{ profilePic }}" alt="Avatar">
                     </div>
                   {{/with}}
@@ -59,18 +59,23 @@
                           <ul class="uk-nav uk-navbar-dropdown-nav">
 
                               <li>
-                                  <div class="uk-container uk-padding-remove">
-                                      <a id="buttonAbout" class="uk-button uk-button-text uk-margin-remove" href="/create">Create a new post</a>
+                                  <div class="uk-container uk-padding uk-padding-remove-top uk-padding-remove-bottom uk-padding-remove-horizontal">
+                                      <a class="uk-button uk-button-text" href="/create">Create a new post</a>
                                   </div>
                               </li>
                               <li>
-                                  <div class="uk-container">
-                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/user/profile">Profile</a>
+                                  <div class="uk-container uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
+                                      <a class="uk-button uk-button-text" href="/user/newCountry">Add a new country</a>
                                   </div>
                               </li>
                               <li>
-                                  <div class="uk-container">
-                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/auth/logout">Logout</a>
+                                  <div class="uk-container uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
+                                      <a class="uk-button uk-button-text" href="/user/profile">Profile</a>
+                                  </div>
+                              </li>
+                              <li>
+                                  <div class="uk-container uk-padding uk-padding-remove-bottom uk-padding-remove-horizontal">
+                                      <a class="uk-button uk-button-text" href="/auth/logout">Logout</a>
                                   </div>
                               </li>                                  
                           
@@ -92,7 +97,7 @@
 
                   {{!-- SignUp button --}}
                   <div class="uk-card">
-                      <a class="uk-button uk-button-secondary" href="/auth/signup">SignUp</a>
+                      <a id="orangeButton" class="uk-button" href="/auth/signup">SignUp</a>
                   </div>
 
               </div>
