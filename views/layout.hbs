@@ -44,27 +44,56 @@
             <div class="btn-layout">
               <div class="d-flex nav-bar-container" >
                 {{#unless currentUser}}
-                  <a href="/auth/login">
-                    <button class="btn btn-outline-success login-layout">Login</button>
-                  </a>
 
-                  <a href="/auth/signup">
-                    <button class="btn btn-outline-success login-layout">Signup</button>
-                  </a>
+                <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-grid-match uk-grid-small">
+                    <div class="uk-card">
+                        <a class="uk-button uk-button-default" href="/auth/login">Login</a>
+                    </div>
+                    <div class="uk-card">
+                        <a class="uk-button uk-button-secondary" href="/auth/signup">Signup</a>
+                    </div>
+                </div>
 
                 {{/unless}}
 
                 {{#if currentUser}}
                   {{#with currentUser}}
-                    <img src="{{profilePic}}" class="pic-default-navbar"/>
                     <h3 class="user-name">{{name}} {{lastName}}</h3>
+                    <img src="{{profilePic}}" class="pic-default-navbar"/>
                   {{/with}}
-                    <a href="/user/profile">
-                      <button class="btn btn-outline-success login-layout">Profile</button>
-                    </a>
-                    <a href="/auth/logout">
-                      <button class="btn btn-outline-success login-layout">Logout</button>
-                    </a>
+                  {{!-- <div class="uk-container uk-flex uk-flex-center uk-flex-middle uk-grid-match uk-grid-small">
+                      <div class="uk-card">
+                          <a class="uk-button uk-button-default" href="/user/profile">Profile</a>
+                      </div>
+                      <div class="uk-card">
+                          <a class="uk-button uk-button-secondary" href="/auth/logout">Logout</a>
+                      </div>
+                  </div> --}}
+                  
+                  <nav class="uk-navbar uk-margin" uk-navbar>
+                      
+                          <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+                          <div class="uk-navbar-dropdown">
+                              <ul class="uk-nav uk-navbar-dropdown-nav">
+                                  <li class="uk-active">
+                                    <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/create">Create a new post</a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/user/profile">Profile</a>
+                                    </div>
+                                  </li>
+                                  <li>
+                                    <div class="uk-container">
+                                      <a id="buttonAbout" class="uk-button uk-button-text" href="/auth/logout">Logout</a>
+                                    </div>
+                                  </li>                                  
+                              </ul>
+                          </div>
+                      
+                  </nav>
                 {{/if}}
                 
               </div>
