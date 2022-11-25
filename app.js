@@ -29,7 +29,7 @@ const app = express();
 require("./config")(app);
 
 const capitalize = require("./utils/capitalize");
-const projectName = "Proyecto#2";
+const projectName = "TravelBook";
 
 app.locals.appTitle = `${capitalize(projectName)}`;
 
@@ -37,16 +37,17 @@ app.locals.appTitle = `${capitalize(projectName)}`;
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
 
-
 //localhost:3000/auth
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
+
 //ruta post
 const postRoutes = require("./routes/post.routes");
 app.use("/", postRoutes);
 
 const startPagesRoutes = require("./routes/startPages.routes");
 app.use("/", startPagesRoutes);
+
 //localhost:3000/user
 const userRoutes = require("./routes/user.routes");
 app.use("/user", userRoutes);

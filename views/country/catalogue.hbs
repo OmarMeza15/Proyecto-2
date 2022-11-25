@@ -42,15 +42,9 @@
 
                             <select name="country" class="uk-select">
                               <option value="">Please choose a country</option>
-                              <option value="Argentina">Argentina</option>
-                              <option value="Bolivia">Bolivia</option>
-                              <option value="Brasil">Brasil</option>
-                              <option value="Canada">Canada</option>
-                              <option value="Chile">Chile</option>
-                              <option value="Colombia">Colombia</option>
-                              <option value="Hungria">Hungria</option>
-                              <option value="Mexico">Mexico</option>
-                              <option value="Usa">Usa</option>
+                                {{#each countries}}
+                                    <option value="{{ countryName }}" class="uk-text-capitalize">{{ countryName }}</option>
+                                {{/each}}
                             </select>
 
                         </div>
