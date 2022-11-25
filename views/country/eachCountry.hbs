@@ -27,24 +27,28 @@
         </div>
     </div>
 
-    {{!-- Search form --}}
+    {{!-- Country information and search form --}}
     <div class="uk-card">
-        
-                {{#with data}}
+
+            {{!-- Country information --}}
+            {{#with data}}
                 <div class="uk-text-center">
 
                     <div class="uk-card-header uk-padding-remove-bottom">
                         <h2 id="eachCountryTitle" class="uk-text uk-text-capitalize" name="countryName">{{countryName}}</h2>
                     </div>
+
                     <hr class="uk-margin-remove-top">
+
                     <div class="uk-card-media-top">
                         <img src="{{flagImg}}" alt="country-flag" class="flags" name="flagImg">
                         <p name="info">{{info}}</p>
                     </div>
 
                 </div>
-                {{/with}}
-                
+            {{/with}}
+
+            {{!-- Search form --}}
             <legend class="uk-legend uk-text-center">Checkout other countries!</legend>
 
             <form class="dropdown country-enter1" action="/country/eachCountry">

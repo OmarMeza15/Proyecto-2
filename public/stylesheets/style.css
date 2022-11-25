@@ -170,10 +170,7 @@ i{
   width: 25%;
   height: 35px;
 }
-button:hover{
-  color: white;
-  background-color: rgb(36, 97, 36);
-}
+
 .country-enter1{
   margin-top: 5px;
 }
@@ -288,12 +285,12 @@ button:hover{
   margin-top: 100px;
 }
 
-#button {
+/* #button {
   padding-left: 0;
   padding-right: 0;
   margin-top: 100px;
   margin-bottom: 100px;
-}
+} */
 
 #buttonAbout {
   margin-top: 50px;

@@ -2,20 +2,21 @@
 
     {{!-- Profile info --}}
     <div>
-
         <div class="uk-card uk-card-default uk-card-body uk-position-z-index uk-flex uk-flex-column uk-flex-middle" uk-sticky="end: #js-oversized; offset: 80">
             
             {{#if currentUser}}
                 {{#with currentUser}}
                 
-
+                    {{!-- Profile Pic --}}
                     <div class="uk-card-media-top">
                          <img src="{{ profilePic }}" width="150" height="150" class="uk-border-circle" alt="">
                     </div>
+
+                    {{!-- Profile info--}}
                     <div class="uk-card-body">
                         <h3 class="uk-text-capitalize">{{ name }}  {{ lastName }}</h3>
                         <h5>Country: {{ country }}</h5>
-                        <h6>Birthday: {{ dateOfBirth }}</h6>
+                        <h6>Birthday: {{ dateFormat dateOfBirth }}</h6>
                         <h6>Occupation: {{ occupation }}</h6>
                         <h3>About me:</h3>
                         <p>{{ aboutUser }}</p>
@@ -25,44 +26,41 @@
             {{/if}}
                 
         </div>
-
     </div>
 
     {{!-- Posts --}}
     <div>
-
         <div class="uk-padding">
 
-            {{#if currentUser}}
-                    
+            {{#if currentUser}}   
                 {{#each post}}
                     <div class="uk-card uk-card-hover uk-grid-medium">
+                        {{!-- Photo of the post --}}
                         <div class="uk-card-media-top">
                             <img src="{{ image }}" width="1800" height="1200" alt="">
                         </div>
 
+                        {{!-- Information about post --}}
                         <div class="uk-card-header">
                             <h3 id="profilePosts" class="uk-card-title uk-text-capitalize">{{ title }}</h3>
-                            <p>{{ country }}</p>
+                            <h4 class="uk-text-capitalize">{{ country }}</h4>
                             <p class="uk-text-muted uk-text-small">{{ dateFormat date }}</p>
                         </div>
-
                         <p class="uk-text-muted uk-text-truncate">{{ text }}</p>
                         
-                        <div class="uk-card-footer">
-                            <a class="uk-button uk-button-text" href="/post/{{_id}}">Read more</a>
-                            <a class="uk-button uk-button-text" href="/post/{{_id}}/editPost">Edit</a>
+                        {{!-- Links to edit, delete, and read more --}}
+                        <div class="uk-card-footer uk-flex">
+                            <a class="uk-button uk-button-text uk-margin-small-right" href="/post/{{_id}}">Read more</a>
+                            <a class="uk-icon-link uk-margin-small-right" href="/post/{{_id}}/editPost" uk-icon="icon: pencil"></a>
                             <form action="/post/{{_id}}/delete" method="post">
-                                <button class="uk-button uk-button-secondary" type="submit">Delete</button>
+                                <button class="uk-icon-link" type="submit" uk-icon="icon: trash"></button>
                             </form>
                         </div>
                     </div>
-                {{/each}}
-                   
+                {{/each}}  
             {{/if}}
 
         </div>
-
     </div>
 
 </div>

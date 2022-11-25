@@ -24,17 +24,17 @@
         </div>
 
         {{!-- Body of post --}}
-        <div>
+        <div>   
                 <div class="uk-card uk-card-body">
                     <article class="uk-article">
 
-                        <h1 id="postTitle" class="uk-article-title">{{ title }}</h1>
+                        <h1 id="postTitle" class="uk-article-title uk-text-capitalize">{{ title }}</h1>
 
-                        <p class="uk-article-meta">Written by Super User</a> on 12 April 2012.</p>
+                        <p class="uk-article-meta">Written on {{ dateFormat dateAt}}.</p>
 
                         <p class="uk-text-lead uk-text-capitalize">{{ country }}</p>
 
-                        <p class="uk-text-lead uk-text-lighter">{{ dateFormat date }}</p>
+                        <p class="uk-text uk-text-lighter">{{ dateFormat date }}</p>
 
                         <p>{{ text }}</p>
 
