@@ -7,6 +7,7 @@
             
             {{#if currentUser}}
                 {{#with currentUser}}
+                
 
                     <div class="uk-card-media-top">
                          <img src="{{ profilePic }}" width="150" height="150" class="uk-border-circle" alt="">
@@ -43,11 +44,11 @@
                         <div class="uk-card-header">
                             <h3 id="profilePosts" class="uk-card-title uk-text-capitalize">{{ title }}</h3>
                             <p>{{ country }}</p>
-                            <p class="uk-text-muted uk-text-small">{{ date }}</p>
+                            <p class="uk-text-muted uk-text-small">{{ dateFormat date }}</p>
                         </div>
 
                         <p class="uk-text-muted uk-text-truncate">{{ text }}</p>
-
+                        
                         <div class="uk-card-footer">
                             <a class="uk-button uk-button-text" href="/post/{{_id}}">Read more</a>
                             <a class="uk-button uk-button-text" href="/post/{{_id}}/editPost">Edit</a>

@@ -9,9 +9,19 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+const moment = require("moment");
+console.log(moment(new Date()).format("DD/MM/YYYY HH:mm"))
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
+
+hbs.registerHelper("dateFormat", (date) => {
+    console.log("la fecha es: ", date);
+    return moment(date).format("DD/MM/YYYY")
+})
+
+// Registrar helper
+
 
 const app = express();
 
