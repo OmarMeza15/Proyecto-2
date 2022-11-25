@@ -385,7 +385,7 @@ i{
   color: white;
 }
 
-#orangeLogo, #indexHeading, #login, #signup, #aboutTitle, #postTitle, #createPostTitle, #newCountry, #profilePosts, #welcomeTitle, #catalogueTitle, #eachCountryTitle {
+#orangeLogo, #indexHeading, #login, #signup, #aboutTitle, #postTitle, #createPostTitle, #newCountry, #profilePosts, #welcomeTitle, #catalogueTitle, #eachCountryTitle, #exampleTitle, #aboutTitle {
 color: #E66155;
 font-family: 'Libre Baskerville', serif;
 }

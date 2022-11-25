@@ -20,7 +20,7 @@
     </div>    
 
 {{!-- Country cards --}}
-    <div id="cards" class="uk-child-width-1-4@m uk-flex uk-flex-center" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card, .uk-button; delay: 400;">
+    <div id="cards" class="uk-child-width-1-4@m uk-flex uk-flex-center" uk-scrollspy="cls: uk-animation-fade; target: .uk-card, .uk-button; delay: 400;" uk-grid>
 
         {{!-- Colombia --}}
         <div>
@@ -153,34 +153,63 @@
     <div class="uk-container uk-container-large uk-height-medium uk-flex uk-flex-column uk-flex-center uk-flex-middle" uk-scrollspy="cls: uk-animation-fade; target: h1, p; delay: 400;">
 
         <div class="uk-container uk-container-small">
-            <h1 class="uk-heading-line uk-text-center"><span>Heading Line</span></h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda accusamus aperiam voluptate tempore aliquid praesentium dicta esse nesciunt provident vel enim magnam dolore odit voluptatem.</p>
+            <h1 id="exampleTitle" class="uk-heading-line uk-text-center"><span>Start Posting</span></h1>
+            <p>Capture your adventures in a digital diary that you can share with friends and family.</p>
         </div>
 
     </div>
 
 {{!-- Examples --}}
-    <div class="uk-child-width-expand@s" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card, h3, p; delay: 400;">
+    <div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-scrollspy="cls: uk-animation-fade; target: div; delay: 400;" uk-grid>
 
-        <div class="uk-grid-item-match">
-            <div class="uk-card uk-card-default uk-card-body">
-                <h3>Heading</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>
+        {{!-- Slideshow --}}
         <div>
-            <h3>Heading</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+
+                    <div class="uk-position-relative uk-visible-toggle uk-light" uk-slideshow="ratio: 3:4; animation: fade; autoplay: true; autoplay-interval: 6000" tabindex="-1" uk-slideshow>
+
+                        <ul class="uk-slideshow-items">
+                            <li>
+                                <img src="https://www.ourescapeclause.com/wp-content/uploads/2016/12/shutterstock_1322105165-scaled.jpg" alt="" uk-cover>
+                            </li>
+                        </ul>
+
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+                    </div>
+
+                </div>
+
         </div>
 
-    </div>
+        {{!-- Body of post --}}
+        <div>   
+                <div class="uk-card uk-card-body">
+                    <article class="uk-article">
+
+                        <h1 id="postTitle" class="uk-article-title uk-text-capitalize">My First Ever Trip to Mexico City!</h1>
+
+                        <p class="uk-article-meta">Written on 25/11/2022.</p>
+
+                        <p class="uk-text-lead uk-text-capitalize">Mexico</p>
+
+                        <p class="uk-text uk-text-lighter">10/11/2022</p>
+
+                        <p>I am just blown away by the city. It is so beautiful. I explored the different neighborhoods (outside of Roma, Condesa, Polanco) and really loved the San Angel neighborhood (so fancy). THE FOOD SCENE is the best I have ever seen. There are countless restaurants, cafes, and bars and I did my best to make sure I was able to eat at some popular places like Maque, El Cardinal, Eno, and other places. I miss the Chilaquiles and the Enchiladas I ate for breakfast and the Concha and Pan De Muerto. I am sitting here thinking about the delicious food that I ate and I miss all of it, along with Mexico City. The greenery, the parks, the museums.</p>
+
+                    </article>
+                </div>
+        </div>
+
+    </div>  
 
 {{!-- About section --}}
-    <div class="uk-container uk-container-large uk-height-medium uk-flex uk-flex-column uk-flex-center uk-flex-middle" uk-scrollspy="cls: uk-animation-fade; target: h1, p, a; delay: 400;">
+    <div class="uk-container uk-container-large uk-height-large uk-flex uk-flex-column uk-flex-center uk-flex-middle" uk-scrollspy="cls: uk-animation-fade; target: h1, p, a; delay: 400;">
 
         <div class="uk-container uk-container-small">
 
-            <h1 class="uk-heading-line uk-text-center"><span>About</span></h1>
+            <h1 id="aboutTitle" class="uk-heading-line uk-text-center"><span>About</span></h1>
             <p class="uk-margin-remove-vertical uk-text-center">You want to know who is behind this application?</p>
             <p class="uk-margin-remove-vertical uk-text-center">Or maybe you want to know how we made this possible?</p>
 
