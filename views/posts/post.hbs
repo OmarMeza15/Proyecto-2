@@ -1,5 +1,5 @@
 {{#with fullPost}}
-
+    
     <div class="uk-child-width-1-3@m uk-grid-match uk-grid-large uk-flex uk-flex-middle uk-flex-center" uk-grid>
 
         {{!-- Slideshow --}}
@@ -38,12 +38,34 @@
 
                         <p>{{ text }}</p>
 
-                        <div class="uk-grid-small uk-child-width-auto" uk-grid>
-                            <div>
-                                <a class="uk-button uk-button-text" href="#">5 Comments</a>
+                        {{#unless comments}}
+                            <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                                <div>
+                                    <a class="uk-button uk-button-text" href="#">No comments yet!</a>
+                                </div>
                             </div>
-                        </div>
+                        {{/unless}}
 
+                        {{#each comments}}
+                            <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                                <div>
+                                    <a class="uk-button uk-button-text" href="#">{{ author.name }}:  {{content}}</a>
+                                </div>
+                            </div>
+                        {{/each}}
+
+                        <h3>Add comment</h3>
+ 
+                        <form action="/post/{{_id}}/comment" method="post">
+                        <label> Your name:
+                            <input type="text" name="author" />
+                        </label>
+                        
+                        <input type="text" name="_id" value="{{author._id}}" hidden />
+                        <textarea name="content" cols="30" rows="2"></textarea>
+                        
+                        <button type="submit">Comment</button>
+                        </form>
                     </article>
                 </div>
         </div>

@@ -82,9 +82,11 @@ router.get("/post/:postId", async (req, res, next) => {
     try {
         const { postId } = req.params
 
-        console.log("-----------> ", postId)
-        const postInfo = await Post.findById(postId);
-        console.log("-----------> ", postInfo)
+        console.log("este es el primerddddd -----------> ", postId)
+        const postInfo = await Post.findById(postId)
+        .populate("_id")
+        .populate("comments")
+        console.log("este es el segusffff-----------> ", postInfo)
         res.render("posts/post", {fullPost: postInfo, currentUser: req.session.currentUser});
     } catch(err) {
         console.log(err);

@@ -8,9 +8,10 @@ router.get("/catalogue", async (req, res) => {
         const { country = "" } = req.query;
         // const { country, title, image } = req.body;
         const data = await Country.findOne({countryName: country.toLowerCase()})
-        const postDB = await Post.find()
+        const postDB = await Post.find().populate("_id");
+        console.log("Este es el console de catalogue 333333-----", postDB);
         res.render("country/catalogue", { currentUser: req.session.currentUser, post: postDB })
-        res.render("country/eachCountry", { currentUser: req.session.currentUser, data, post: postDB }) 
+        // res.render("country/eachCountry", { currentUser: req.session.currentUser, data, post: postDB }) 
     }
     catch (err) {
         console.log(err)
